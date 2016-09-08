@@ -1,0 +1,20 @@
+{
+  //设置ts文件路径
+  "files": [
+    "src/aides.ts",
+    "src/reg.ts",
+    "src/util.ts"
+  ],
+  //设置编译选项
+  "compilerOptions": {
+    "module": "commonjs",//设置模块系统为commonjs
+    "sourceMap": true,//生成sourceMap
+    "target": "ES5",//指定es版本
+    "noImplicitUseStrict": true,//模块输出中不包含'use strict'指令
+    "noEmitHelpers": false,//不在输出文件中生成用户自定义的帮助函数代码
+    "noEmitOnError": true,//报错时不生成输出文件
+    "pretty": true,//给错误和消息设置样式
+    "removeComments": true //删除所有注释，除了以/!*开头的版权信息
+  },
+  "compileOnSave": true
+}
