@@ -58,6 +58,6 @@ gulp.task("es5", ["webpack"], function () {
 gulp.task("default", ["es5","ts"], function () {
 
   //  监控js文件
-  gulp.watch("./src/*.ts", ["toES5"]);
+  gulp.watch("./src/*.ts", ["es5"]);
 
 });

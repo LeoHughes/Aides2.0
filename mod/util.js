@@ -37,6 +37,24 @@ var Util = (function () {
         }
         return outStr;
     };
+    Util.prototype.getDate = function (type) {
+        var time = new Date(), year = time.getFullYear(), m = time.getMonth() + 1, month = m < 10 ? ('0' + m) : m, d = time.getDate(), day = d < 10 ? ('0' + d) : d, dateText = '';
+        if (type === 'CN') {
+            return dateText += year + '年' + month + '月' + day + '日';
+        }
+        else {
+            return dateText += year + '-' + month + '-' + day;
+        }
+    };
+    Util.prototype.getTimes = function (type) {
+        var time = new Date(), hours = time.getHours(), m = time.getMinutes(), minutes = m < 10 ? ('0' + m) : m, s = time.getSeconds(), seconds = s < 10 ? ('0' + s) : s, dateText = '';
+        if (type === 'CN') {
+            return dateText += hours + '时' + minutes + '分' + seconds + '秒';
+        }
+        else {
+            return dateText += hours + ':' + minutes + ':' + seconds;
+        }
+    };
     return Util;
 }());
 exports.Util = Util;

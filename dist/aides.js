@@ -50,12 +50,17 @@
 
 	var reg_1 = __webpack_require__(1);
 	var Aides = function () {
-		function Aides() {}
+		function Aides() {
+			this.reg = new reg_1.Reg();
+		}
 		return Aides;
 	}();
-	(function () {
-		this._ = new reg_1.Reg();
-	}).call(window);
+	exports.Aides = Aides;
+	if (window) {
+		(function (window) {
+			window._ = new Aides();
+		})(window);
+	}
 
 	/***/
 },

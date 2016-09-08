@@ -1,9 +1,8 @@
 var reg_1 = require('./reg');
 var Aides = (function () {
     function Aides() {
+        this.reg = new reg_1.Reg();
     }
     return Aides;
 }());
-(function () {
-    this._ = new reg_1.Reg();
-}).call(window);
+exports.Aides = Aides;
