@@ -53,7 +53,7 @@ class Reg {
   }
 
   /**检测类型是否是Null、undefined或者'' */
-  isNull(obj: any) {
+  isNull(obj: any) : boolean {
     return obj === '' || obj === undefined || obj === null ? true : false;
   }
 
