@@ -257,8 +257,12 @@
 			}
 			return result;
 		};
-		Util.prototype.roundNum = function (start, end) {
+		Util.prototype.randomNum = function (start, end) {
 			return Math.floor(Math.random() * (end - start) + start);
+		};
+		Util.prototype.getCode = function (num) {
+			var random = Math.random();
+			return random.toString(16).substr(2, num);
 		};
 		return Util;
 	}();

@@ -143,8 +143,18 @@ class Util {
   /**
    * 生成范围随机数
    */
-  roundNum(start: number, end: number): number {
+  randomNum(start: number, end: number): number {
     return Math.floor(Math.random() * (end - start) + start);
+  }
+
+  /**
+   * 随机验证码
+   * 
+   * num:验证码位数
+   */
+  getCode(num:number):string{
+    let random = Math.random();
+    return random.toString(16).substr(2,num);
   }
 
 

@@ -62,6 +62,13 @@ var Util = (function () {
         }
         return result;
     };
+    Util.prototype.randomNum = function (start, end) {
+        return Math.floor(Math.random() * (end - start) + start);
+    };
+    Util.prototype.getCode = function (num) {
+        var random = this.randomNum(0, num);
+        return random;
+    };
     return Util;
 }());
 exports.Util = Util;
