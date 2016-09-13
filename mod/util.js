@@ -37,23 +37,37 @@ var Util = (function () {
         }
         return outStr;
     };
-    Util.prototype.getDate = function (type) {
-        var time = new Date(), year = time.getFullYear(), m = time.getMonth() + 1, month = m < 10 ? ('0' + m) : m, d = time.getDate(), day = d < 10 ? ('0' + d) : d, dateText = '';
-        if (type === 'CN') {
-            return dateText += year + '年' + month + '月' + day + '日';
-        }
-        else {
-            return dateText += year + '-' + month + '-' + day;
-        }
+    Util.prototype.getDate = function (sepr) {
+        if (sepr === void 0) { sepr = '/'; }
+        var dateArr = this._getDate();
+        return "" + dateArr[0] + sepr + dateArr[1] + sepr + dateArr[2];
     };
-    Util.prototype.getTimes = function (type) {
-        var time = new Date(), hours = time.getHours(), m = time.getMinutes(), minutes = m < 10 ? ('0' + m) : m, s = time.getSeconds(), seconds = s < 10 ? ('0' + s) : s, dateText = '';
-        if (type === 'CN') {
-            return dateText += hours + '时' + minutes + '分' + seconds + '秒';
-        }
-        else {
-            return dateText += hours + ':' + minutes + ':' + seconds;
-        }
+    Util.prototype.getCNDate = function () {
+        var dateArr = this._getDate();
+        return dateArr[0] + "\u5E74" + dateArr[1] + "\u6708" + dateArr[2] + "\u65E5";
+    };
+    Util.prototype.getTimes = function (sepr) {
+        if (sepr === void 0) { sepr = ':'; }
+        var dateArr = this._getTimes();
+        return "" + dateArr[0] + sepr + dateArr[1] + sepr + dateArr[2];
+    };
+    Util.prototype.getCNTimes = function () {
+        var dateArr = this._getTimes();
+        return dateArr[0] + "\u65F6" + dateArr[1] + "\u5206" + dateArr[2] + "\u79D2";
+    };
+    Util.prototype._getDate = function () {
+        var time = new Date(), year = time.getFullYear(), m = time.getMonth() + 1, month = m < 10 ? ('0' + m) : m, d = time.getDate(), day = d < 10 ? ('0' + d) : d, outArr = [];
+        outArr.push(year.toString());
+        outArr.push(month.toString());
+        outArr.push(day.toString());
+        return outArr;
+    };
+    Util.prototype._getTimes = function () {
+        var time = new Date(), hours = time.getHours(), m = time.getMinutes(), minutes = m < 10 ? ('0' + m) : m, s = time.getSeconds(), seconds = s < 10 ? ('0' + s) : s, outArr = [];
+        outArr.push(hours.toString());
+        outArr.push(minutes.toString());
+        outArr.push(seconds.toString());
+        return outArr;
     };
     Util.prototype.exNum = function (year) {
         var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'], num = year.toString(), numArr = num.split(''), len = numArr.length, result = '';
@@ -66,8 +80,8 @@ var Util = (function () {
         return Math.floor(Math.random() * (end - start) + start);
     };
     Util.prototype.getCode = function (num) {
-        var random = this.randomNum(0, num);
-        return random;
+        var random = Math.random();
+        return random.toString(16).substr(2, num);
     };
     return Util;
 }());

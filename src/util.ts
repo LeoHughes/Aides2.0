@@ -38,9 +38,6 @@ class Util {
    * length:截取位数
    * separator:截断的符号
    *
-   * var a = 'this is a text,ohoh!'
-   * trunc(a,13,'.') =>   'this is a text.'
-   *
    */
   trunc(text: string, length: number, separator: string): string {
     let len = length || text.length,
@@ -53,9 +50,6 @@ class Util {
    * 字符串重复
    *
    * length:重复次数
-   *
-   * var a = 'a'
-   * repeat(a,3) => 'aaa'
    *
    */
   repeat(text: string, length: number): string {
@@ -70,61 +64,90 @@ class Util {
   }
 
   /**
-   * 获取当前时间(年月日)
+   * 获取当前日期(年月日)
    *
-   * type:CN中文格式
-   *
-   * getDate() => 2014-04-26
-   * getDate('CN') => 2014年04月26日
+   * separator:分隔符号
    *
    */
-  getDate(type: string): string {
+  getDate(sepr = '/'): string {
+    const dateArr = this._getDate();
+
+    return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`;
+  }
+
+  /**
+   * 获取当前日期中文格式(年月日)
+   */
+  getCNDate(): string {
+    const dateArr = this._getDate();
+
+    return `${dateArr[0]}年${dateArr[1]}月${dateArr[2]}日`;
+  }
+
+  /**
+   * 获取当前时间(时分秒)
+   *
+   */
+  getTimes(sepr = ':'): string {
+    const dateArr = this._getTimes();
+
+    return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`;
+
+  }
+
+  /**
+   * 获取当前时间中文格式(时分秒)
+   *
+   */
+  getCNTimes(): string {
+    const dateArr = this._getTimes();
+
+    return `${dateArr[0]}时${dateArr[1]}分${dateArr[2]}秒`;
+
+  }
+
+  /**
+   * 以数组返回当前时间[年月日]
+   *
+   */
+  private _getDate(): Array<string> {
     let time = new Date(),
       year = time.getFullYear(),
       m = time.getMonth() + 1,
       month = m < 10 ? ('0' + m) : m,
       d = time.getDate(),
       day = d < 10 ? ('0' + d) : d,
-      dateText = '';
+      outArr = [];
 
-    if (type === 'CN') {
-      return dateText += year + '年' + month + '月' + day + '日';
-    } else {
-      return dateText += year + '-' + month + '-' + day;
-    }
+    outArr.push(year.toString());
+    outArr.push(month.toString());
+    outArr.push(day.toString());
+
+    return outArr;
   }
 
   /**
-   * 获取当前时间(时分秒)
-   *
-   * type:CN中文格式
-   *
-   * getTimes() => 17:06:25
-   * getTimes('CN') => 17时06分25秒
+   * 以数组返回当前时间[时分秒]
    *
    */
-  getTimes(type: string): string {
-    let time = new Date(),
+  private _getTimes(): Array<string> {
+    var time = new Date(),
       hours = time.getHours(),
       m = time.getMinutes(),
       minutes = m < 10 ? ('0' + m) : m,
       s = time.getSeconds(),
       seconds = s < 10 ? ('0' + s) : s,
-      dateText = '';
+      outArr = [];
 
-    if (type === 'CN') {
-      return dateText += hours + '时' + minutes + '分' + seconds + '秒';
-    } else {
-      return dateText += hours + ':' + minutes + ':' + seconds;
-    }
+    outArr.push(hours.toString());
+    outArr.push(minutes.toString());
+    outArr.push(seconds.toString());
+
+    return outArr;
   }
 
   /**
    * 将阿拉伯数字转为汉字数字
-   *
-   * var a = 2016
-   * exNum(a) => 二零一六
-   *
    */
   exNum(year: number | string): string {
     var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
@@ -152,9 +175,9 @@ class Util {
    * 
    * num:验证码位数
    */
-  getCode(num:number):string{
+  getCode(num: number): string {
     let random = Math.random();
-    return random.toString(16).substr(2,num);
+    return random.toString(16).substr(2, num);
   }
 
 

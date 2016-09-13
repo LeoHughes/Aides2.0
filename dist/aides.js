@@ -218,33 +218,53 @@
 			}
 			return outStr;
 		};
-		Util.prototype.getDate = function (type) {
+		Util.prototype.getDate = function (sepr) {
+			if (sepr === void 0) {
+				sepr = '/';
+			}
+			var dateArr = this._getDate();
+			return "" + dateArr[0] + sepr + dateArr[1] + sepr + dateArr[2];
+		};
+		Util.prototype.getCNDate = function () {
+			var dateArr = this._getDate();
+			return dateArr[0] + '年' + dateArr[1] + '月' + dateArr[2] + '日';
+		};
+		Util.prototype.getTimes = function (sepr) {
+			if (sepr === void 0) {
+				sepr = ':';
+			}
+			var dateArr = this._getTimes();
+			return "" + dateArr[0] + sepr + dateArr[1] + sepr + dateArr[2];
+		};
+		Util.prototype.getCNTimes = function () {
+			var dateArr = this._getTimes();
+			return dateArr[0] + '时' + dateArr[1] + '分' + dateArr[2] + '秒';
+		};
+		Util.prototype._getDate = function () {
 			var time = new Date(),
 			    year = time.getFullYear(),
 			    m = time.getMonth() + 1,
 			    month = m < 10 ? '0' + m : m,
 			    d = time.getDate(),
 			    day = d < 10 ? '0' + d : d,
-			    dateText = '';
-			if (type === 'CN') {
-				return dateText += year + '年' + month + '月' + day + '日';
-			} else {
-				return dateText += year + '-' + month + '-' + day;
-			}
+			    outArr = [];
+			outArr.push(year.toString());
+			outArr.push(month.toString());
+			outArr.push(day.toString());
+			return outArr;
 		};
-		Util.prototype.getTimes = function (type) {
+		Util.prototype._getTimes = function () {
 			var time = new Date(),
 			    hours = time.getHours(),
 			    m = time.getMinutes(),
 			    minutes = m < 10 ? '0' + m : m,
 			    s = time.getSeconds(),
 			    seconds = s < 10 ? '0' + s : s,
-			    dateText = '';
-			if (type === 'CN') {
-				return dateText += hours + '时' + minutes + '分' + seconds + '秒';
-			} else {
-				return dateText += hours + ':' + minutes + ':' + seconds;
-			}
+			    outArr = [];
+			outArr.push(hours.toString());
+			outArr.push(minutes.toString());
+			outArr.push(seconds.toString());
+			return outArr;
 		};
 		Util.prototype.exNum = function (year) {
 			var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
