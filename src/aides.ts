@@ -9,8 +9,11 @@ class Aides {
 
   protected reg: Reg;
 
+  protected util : Util;
+
   constructor() {
     this.reg = new Reg();
+    this.util = new Util();
   }
 
 }

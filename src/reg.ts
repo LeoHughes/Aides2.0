@@ -53,12 +53,12 @@ class Reg {
   }
 
   /**检测类型是否是Null、undefined或者'' */
-  isNull(obj: any) : boolean {
+  isNull(obj: any): boolean {
     return obj === '' || obj === undefined || obj === null ? true : false;
   }
 
   /**检测类型是否是Array */
-  isArray(arr: Array<any>): boolean {
+  isArray(arr: any): boolean {
     const typeName = '[object Array]';
     return (this._testType(arr) === typeName);
   }
@@ -76,19 +76,19 @@ class Reg {
   }
 
   /**检测类型是否是String */
-  isString(str: string): boolean {
+  isString(str: any): boolean {
     const typeName = '[object String]';
     return (this._testType(str) === typeName);
   }
 
   /**检测类型是否是Number */
-  isNumber(num: number): boolean {
+  isNumber(num: any): boolean {
     const typeName = '[object Number]';
     return (this._testType(num) === typeName);
   }
 
   /**检测类型是否是Boolean */
-  isBoolean(flag: boolean): boolean {
+  isBoolean(flag: any): boolean {
     const typeName = '[object Boolean]';
     return (this._testType(flag) === typeName);
   }

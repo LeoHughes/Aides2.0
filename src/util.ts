@@ -74,8 +74,8 @@ class Util {
    *
    * type:CN中文格式
    *
-   * _.getDate() => 2014-04-26
-   * _.getDate('CN') => 2014年04月26日
+   * getDate() => 2014-04-26
+   * getDate('CN') => 2014年04月26日
    *
    */
   getDate(type: string): string {
@@ -99,8 +99,8 @@ class Util {
    *
    * type:CN中文格式
    *
-   * _.getTimes() => 17:06:25
-   * _.getTimes('CN') => 17时06分25秒
+   * getTimes() => 17:06:25
+   * getTimes('CN') => 17时06分25秒
    *
    */
   getTimes(type: string): string {
@@ -117,6 +117,34 @@ class Util {
     } else {
       return dateText += hours + ':' + minutes + ':' + seconds;
     }
+  }
+
+  /**
+   * 将阿拉伯数字转为汉字数字
+   *
+   * var a = 2016
+   * exNum(a) => 二零一六
+   *
+   */
+  exNum(year: number | string): string {
+    var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
+      num = year.toString(),
+      numArr = num.split(''),
+      len = numArr.length,
+      result = '';
+
+    for (var i = 0; i < len; i++) {
+      result += charArr[parseInt(numArr[i])];
+    }
+
+    return result;
+  }
+
+  /**
+   * 生成范围随机数
+   */
+  roundNum(start: number, end: number): number {
+    return Math.floor(Math.random() * (end - start) + start);
   }
 
 

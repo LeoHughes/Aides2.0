@@ -55,6 +55,13 @@ var Util = (function () {
             return dateText += hours + ':' + minutes + ':' + seconds;
         }
     };
+    Util.prototype.exNum = function (year) {
+        var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'], num = year.toString(), numArr = num.split(''), len = numArr.length, result = '';
+        for (var i = 0; i < len; i++) {
+            result += charArr[parseInt(numArr[i])];
+        }
+        return result;
+    };
     return Util;
 }());
 exports.Util = Util;
