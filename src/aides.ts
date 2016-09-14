@@ -9,9 +9,9 @@ class Aides {
 
   protected reg: Reg;
 
-  protected util : Util;
+  protected util: Util;
 
-  protected store : Store
+  protected store: Store
 
   constructor() {
     this.reg = new Reg();

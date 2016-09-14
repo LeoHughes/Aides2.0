@@ -234,7 +234,7 @@ class Util {
    *  endCallback 结束后的执行方法
    *
    **/
-  setTimesDo(callback: any, time: number, endTime: number, endCallback: any):void {
+  setTimesDo(callback: any, time: number, endTime: number, endCallback: any): void {
 
     if (!_.isNull(time) && !_.isNull(callback)) {
       if (endTime) {

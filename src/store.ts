@@ -113,7 +113,7 @@ class Store {
   /**
    * 清空localStorage的所有数据
    */
-  clearStore():void{
+  clearStore(): void {
     storage.clear();
   }
 
