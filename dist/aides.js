@@ -393,6 +393,13 @@
 			}
 			return obj;
 		};
+		Store.prototype.removeStoreItem = function (name) {
+			storage.removeItem(name);
+			return this.getStoreItem(name) === null ? true : false;
+		};
+		Store.prototype.clearStore = function () {
+			storage.clear();
+		};
 		return Store;
 	}();
 	exports.Store = Store;

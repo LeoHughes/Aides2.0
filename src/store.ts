@@ -102,6 +102,21 @@ class Store {
     return obj;
   }
 
+  /**
+   * 根据name删除localStorage存储的值,成功则返回true
+   */
+  removeStoreItem(name: string): boolean {
+    storage.removeItem(name);
+    return this.getStoreItem(name) === null ? true : false;
+  }
+
+  /**
+   * 清空localStorage的所有数据
+   */
+  clearStore():void{
+    storage.clear();
+  }
+
 
   constructor() {
 
