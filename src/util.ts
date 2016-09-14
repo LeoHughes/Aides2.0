@@ -180,6 +180,25 @@ class Util {
     return random.toString(16).substr(2, num);
   }
 
+  /**
+   * 根据日期获取星期，为空则获取当前时间星期
+   *
+   */
+  getWeek(date?:string):string{
+    date = date || (this.getDate('-'));
+
+    return '星期' + this.exNum(new Date(date).getDay());
+  }
+
+  /**
+   * 来获得一个当前时间的整数时间戳
+   *
+   */
+  now():string{
+    const tArr = this._getDate().concat(this._getTimes());
+    return tArr.join('');
+  }
+
 
   constructor() {
 

@@ -284,6 +284,14 @@
 			var random = Math.random();
 			return random.toString(16).substr(2, num);
 		};
+		Util.prototype.getWeek = function (date) {
+			date = date || this.getDate('-');
+			return '星期' + this.exNum(new Date(date).getDay());
+		};
+		Util.prototype.now = function () {
+			var tArr = this._getDate().concat(this._getTimes());
+			return tArr.join('');
+		};
 		return Util;
 	}();
 	exports.Util = Util;
