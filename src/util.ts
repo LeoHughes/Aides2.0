@@ -184,7 +184,7 @@ class Util {
    * 根据日期获取星期，为空则获取当前时间星期
    *
    */
-  getWeek(date?:string):string{
+  getWeek(date?: string): string {
     date = date || (this.getDate('-'));
 
     return '星期' + this.exNum(new Date(date).getDay());
@@ -194,9 +194,62 @@ class Util {
    * 来获得一个当前时间的整数时间戳
    *
    */
-  now():string{
+  now(): string {
     const tArr = this._getDate().concat(this._getTimes());
     return tArr.join('');
+  }
+
+  /**
+   * 获取url参数并转为string|object返回
+   * 
+   */
+  getUrlParam(): any {
+    const reg_url = window.location.search;
+    let reg_arr = [],
+      url_obj = {};
+
+    if (reg_url) {
+      if (reg_url.indexOf('&') !== -1) {
+        reg_arr = reg_url.substr(1).split('&');
+        for (var v in reg_arr) {
+          var key = reg_arr[v].split('=')[0],
+            value = reg_arr[v].split('=')[1];
+
+          url_obj[key] = value;
+        }
+        return url_obj;
+      } else {
+        return reg_url.substr(1);
+      }
+    }
+
+  }
+
+  /**
+   *  setInterval方法
+   *
+   *  callback 执行方法
+   *  time 执行间隔时间
+   *  endTime 结束时间[为空将一直执行]
+   *  endCallback 结束后的执行方法
+   *
+   **/
+  setTimesDo(callback: any, time: number, endTime: number, endCallback: any):void {
+
+    if (!_.isNull(time) && !_.isNull(callback)) {
+      if (endTime) {
+        var t = setInterval(function () {
+          callback();
+        }, time);
+        setTimeout(function () {
+          clearInterval(t);
+          if (endCallback) endCallback();
+        }, time + endTime);
+      } else {
+        setInterval(callback, time);
+      }
+    }
+
   }
 
 

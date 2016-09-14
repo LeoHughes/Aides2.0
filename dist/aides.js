@@ -50,10 +50,12 @@
 
 	var reg_1 = __webpack_require__(1);
 	var util_1 = __webpack_require__(2);
+	var store_1 = __webpack_require__(3);
 	var Aides = function () {
 		function Aides() {
 			this.reg = new reg_1.Reg();
 			this.util = new util_1.Util();
+			this.store = new store_1.Store();
 		}
 		return Aides;
 	}();
@@ -292,9 +294,108 @@
 			var tArr = this._getDate().concat(this._getTimes());
 			return tArr.join('');
 		};
+		Util.prototype.getUrlParam = function () {
+			var reg_url = window.location.search;
+			var reg_arr = [],
+			    url_obj = {};
+			if (reg_url) {
+				if (reg_url.indexOf('&') !== -1) {
+					reg_arr = reg_url.substr(1).split('&');
+					for (var v in reg_arr) {
+						var key = reg_arr[v].split('=')[0],
+						    value = reg_arr[v].split('=')[1];
+						url_obj[key] = value;
+					}
+					return url_obj;
+				} else {
+					return reg_url.substr(1);
+				}
+			}
+		};
+		Util.prototype.setTimesDo = function (callback, time, endTime, endCallback) {
+			if (!_.isNull(time) && !_.isNull(callback)) {
+				if (endTime) {
+					var t = setInterval(function () {
+						callback();
+					}, time);
+					setTimeout(function () {
+						clearInterval(t);
+						if (endCallback) endCallback();
+					}, time + endTime);
+				} else {
+					setInterval(callback, time);
+				}
+			}
+		};
 		return Util;
 	}();
 	exports.Util = Util;
+
+	/***/
+},
+/* 3 */
+/***/function (module, exports, __webpack_require__) {
+
+	var reg_1 = __webpack_require__(1);
+	var _ = new reg_1.Reg();
+	var storage = window.localStorage;
+	var Store = function () {
+		function Store() {}
+		Store.prototype.getCookie = function (name) {
+			var cname = name + "=";
+			var cookieVal = '';
+			if (document.cookie) {
+				var ca = document.cookie.split(';');
+				for (var _i = 0, ca_1 = ca; _i < ca_1.length; _i++) {
+					var key = ca_1[_i];
+					var c = _.trim(key);
+					if (c.indexOf(cname) === 0) {
+						cookieVal = c.substring(cname.length, c.length);
+					}
+				}
+			}
+			return cookieVal;
+		};
+		Store.prototype.setCookie = function (name, value, time) {
+			var d = new Date(),
+			    expires;
+			d.setTime(d.getTime() + time * 1000);
+			expires = "expires=" + d.toUTCString();
+			document.cookie = name + "=" + value + ";" + expires;
+		};
+		Store.prototype.clearCookie = function (name) {
+			this.setCookie(name, '', -1);
+		};
+		Store.prototype.getStoreItem = function (name) {
+			if (!_.isNull(storage)) {
+				return storage.getItem(name);
+			}
+		};
+		Store.prototype.setStoreItem = function (name, val) {
+			if (!_.isNull(storage)) {
+				return storage.setItem(name, val);
+			}
+		};
+		Store.prototype.setStoreObj = function (obj) {
+			if (_.isObject(obj)) {
+				for (var v in obj) {
+					this.setStoreItem(v, obj[v]);
+				}
+			}
+		};
+		Store.prototype.getStoreObj = function () {
+			var len = storage.length,
+			    obj = {};
+			for (var i = 0; i < len; i++) {
+				var key = storage.key(i),
+				    val = this.getStoreItem(key);
+				obj[key] = val;
+			}
+			return obj;
+		};
+		return Store;
+	}();
+	exports.Store = Store;
 
 	/***/
 }

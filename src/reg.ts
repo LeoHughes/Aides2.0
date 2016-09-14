@@ -44,6 +44,7 @@ const nbsp_reg = /&nbsp;/ig;
 
 /**
  * regObj
+ * 
  */
 class Reg {
 

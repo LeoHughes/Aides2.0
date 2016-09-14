@@ -91,6 +91,40 @@ var Util = (function () {
         var tArr = this._getDate().concat(this._getTimes());
         return tArr.join('');
     };
+    Util.prototype.getUrlParam = function () {
+        var reg_url = window.location.search;
+        var reg_arr = [], url_obj = {};
+        if (reg_url) {
+            if (reg_url.indexOf('&') !== -1) {
+                reg_arr = reg_url.substr(1).split('&');
+                for (var v in reg_arr) {
+                    var key = reg_arr[v].split('=')[0], value = reg_arr[v].split('=')[1];
+                    url_obj[key] = value;
+                }
+                return url_obj;
+            }
+            else {
+                return reg_url.substr(1);
+            }
+        }
+    };
+    Util.prototype.setTimesDo = function (callback, time, endTime, endCallback) {
+        if (!_.isNull(time) && !_.isNull(callback)) {
+            if (endTime) {
+                var t = setInterval(function () {
+                    callback();
+                }, time);
+                setTimeout(function () {
+                    clearInterval(t);
+                    if (endCallback)
+                        endCallback();
+                }, time + endTime);
+            }
+            else {
+                setInterval(callback, time);
+            }
+        }
+    };
     return Util;
 }());
 exports.Util = Util;

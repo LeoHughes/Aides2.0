@@ -1,6 +1,6 @@
 import { Reg } from './reg';
 import { Util } from './util';
-
+import { Store } from './store';
 
 /**
  * Aides
@@ -11,9 +11,12 @@ class Aides {
 
   protected util : Util;
 
+  protected store : Store
+
   constructor() {
     this.reg = new Reg();
     this.util = new Util();
+    this.store = new Store();
   }
 
 }
