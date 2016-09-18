@@ -3,7 +3,9 @@
   "files": [
     "src/aides.ts",
     "src/reg.ts",
-    "src/util.ts"
+    "src/util.ts",
+    "src/store.ts",
+    "src/array.ts"
   ],
   //设置编译选项
   "compilerOptions": {
