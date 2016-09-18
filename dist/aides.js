@@ -488,6 +488,24 @@
 			}
 			return oArr;
 		};
+		Object.prototype.objCompact = function (obj) {
+			var newObj = {};
+			for (var v in obj) {
+				if (obj[v]) {
+					newObj[v] = obj[v];
+				}
+			}
+			return newObj;
+		};
+		Object.prototype.pickKeys = function (obj, keys) {
+			var newObj = {};
+			for (var v in keys) {
+				if (obj.hasOwnProperty(keys[v])) {
+					newObj[keys[v]] = obj[keys[v]];
+				}
+			}
+			return newObj;
+		};
 		return Object;
 	}();
 	exports.Object = Object;

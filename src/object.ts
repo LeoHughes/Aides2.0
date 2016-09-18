@@ -65,6 +65,35 @@ class Object {
     return oArr;
   }
 
+  /**
+   * 去除对象里的假值键
+   * 
+   */
+  objCompact(obj: any): any {
+    let newObj = {};
+    for (var v in obj) {
+      if (obj[v]) {
+        newObj[v] = obj[v];
+      }
+    }
+    return newObj;
+  }
+
+  /**
+   * 返回一个object副本，只过滤出keys[数组]参数指定的属性值。
+   * 
+   */
+  pickKeys(obj: any, keys: string[]): any {
+    let newObj = {};
+    for (var v in keys) {
+      if (obj.hasOwnProperty(keys[v])) {
+        newObj[keys[v]] = obj[keys[v]];
+      }
+    }
+
+    return newObj;
+  }
+
 
   constructor() {
 
