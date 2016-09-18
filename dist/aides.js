@@ -52,12 +52,14 @@
 	var util_1 = __webpack_require__(2);
 	var store_1 = __webpack_require__(3);
 	var array_1 = __webpack_require__(4);
+	var object_1 = __webpack_require__(5);
 	var Aides = function () {
 		function Aides() {
 			this.reg = new reg_1.Reg();
 			this.util = new util_1.Util();
 			this.store = new store_1.Store();
 			this.array = new array_1.Array();
+			this.object = new object_1.Object();
 		}
 		return Aides;
 	}();
@@ -442,6 +444,53 @@
 		return Array;
 	}();
 	exports.Array = Array;
+
+	/***/
+},
+/* 5 */
+/***/function (module, exports, __webpack_require__) {
+
+	var reg_1 = __webpack_require__(1);
+	var _ = new reg_1.Reg();
+	var Object = function () {
+		function Object() {}
+		Object.prototype.has = function (obj, key) {
+			var flag = false;
+			if (_.isObject(obj)) {
+				for (var v in obj) {
+					if (v === key) flag = true;
+				}
+			}
+			return flag;
+		};
+		Object.prototype.keys = function (obj) {
+			var oArr = [];
+			if (_.isObject(obj)) {
+				for (var p in obj) {
+					if (this.has(obj, p)) oArr.push(p);
+				}
+			}
+			return oArr;
+		};
+		Object.prototype.values = function (obj) {
+			var oArr = [];
+			if (_.isObject(obj)) {
+				for (var v in obj) {
+					if (this.has(obj, v)) oArr.push(obj[v]);
+				}
+			}
+			return oArr;
+		};
+		Object.prototype.methods = function (obj) {
+			var oArr = [];
+			for (var v in obj) {
+				if (_.isFunction(obj[v])) oArr.push(v);
+			}
+			return oArr;
+		};
+		return Object;
+	}();
+	exports.Object = Object;
 
 	/***/
 }
