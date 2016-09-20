@@ -59,6 +59,21 @@ var Obj = (function () {
         }
         return newObj;
     };
+    Obj.prototype.assign = function (tarObj) {
+        if (tarObj === void 0) { tarObj = {}; }
+        var objs = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            objs[_i - 1] = arguments[_i];
+        }
+        for (var i in objs) {
+            for (var v in objs[i]) {
+                if (!this.has(tarObj, objs[i][v])) {
+                    tarObj[v] = objs[i][v];
+                }
+            }
+        }
+        return tarObj;
+    };
     return Obj;
 }());
 exports.Obj = Obj;

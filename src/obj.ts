@@ -57,7 +57,7 @@ class Obj {
    * 返回一个对象里所有的方法名, 已经排序的数组.
    * 
    */
-  methods(obj): any[] {
+  methods(obj: any): any[] {
     let oArr = [];
     for (let v in obj) {
       if (_.isFunction(obj[v])) oArr.push(v);
@@ -93,7 +93,21 @@ class Obj {
 
     return newObj;
   }
-
+  
+  /**
+   * 将对象合并为一个对象返回
+   * 
+   */
+  assign(tarObj={},...objs):any{
+    for (let i in objs) {
+      for (let v in objs[i]) {
+        if(!this.has(tarObj,objs[i][v])){
+          tarObj[v] = objs[i][v];
+        }
+      }
+    }
+    return tarObj;
+  }
 
   constructor() {
 

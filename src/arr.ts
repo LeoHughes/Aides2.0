@@ -38,14 +38,86 @@ class Arr {
   }
 
   /**
-   * 一维数组删除指定的值
+   * 获得数字数组中最小值 [会先剔除掉假值再返回最小值]
    * 
    */
-  delValue(arr: any[], val: any): any[] {
-    for (let v of arr) {
-      if (v == val) arr.splice(arr.indexOf(v), 1);
+  getMin(arr: any[]): any {
+    let nArr = this.compact(arr),
+      val = parseInt(nArr[0]),
+      length = nArr.length;
+
+    for (let v in nArr) {
+      if (parseInt(nArr[v]) < val) val = nArr[v];
     }
-    return arr;
+
+    return val;
+  }
+
+  /**
+   * 获得数字数组中最大值 [会先剔除掉假值再返回最大值]
+   * 
+   */
+  getMax(arr: any[]): any {
+    let nArr = this.compact(arr),
+      val = parseInt(nArr[0]),
+      length = nArr.length;
+
+    for (let v in nArr) {
+      if (parseInt(nArr[v]) > val) val = nArr[v];
+    }
+
+    return val;
+  }
+
+  /**
+   * 数组去除重复项[字符串数字和数字视为不同处理]
+   * 
+   */
+  unique(arr: any[]): any {
+    let uq = {},
+      outArr = [],
+      prefix = '';
+
+    for (let v in arr) {
+      if (_.isString(arr[v])) {
+        prefix = '_str';
+      } else {
+        prefix = '';
+      }
+
+      if (!uq[arr[v] + prefix]) {
+        uq[arr[v] + prefix] = true;
+        outArr.push(arr[v]);
+      }
+    }
+
+    return outArr;
+  }
+
+  /**
+   * 数组合并去重 [字符串数字和数字视为不同处理]
+   * 
+   */
+  concat(...arr: any[]): any {
+    return this.unique([].concat(...arr));
+  }
+
+  /**
+   * 将数组转换为对象。
+   * 
+   * list 键列表
+   * values 值列表
+   * 
+   */
+  toObj(list: any[], values: any[]): any {
+    let nObj = {};
+
+    for (var v in list) {
+      if (!values[v]) nObj[list[v]] = undefined;
+      nObj[list[v]] = values[v];
+    }
+
+    return nObj;
   }
 
 

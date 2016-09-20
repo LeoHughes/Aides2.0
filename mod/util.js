@@ -1,5 +1,6 @@
 var reg_1 = require('./reg');
-var _ = new reg_1.Reg();
+var obj_1 = require('./obj');
+var _ = new reg_1.Reg(), o = new obj_1.Obj();
 var Util = (function () {
     function Util() {
     }
@@ -23,6 +24,20 @@ var Util = (function () {
         else {
             console.log(text);
         }
+    };
+    Util.prototype.size = function (el) {
+        var length;
+        if (_.isString(el) || _.isArray(el)) {
+            length = el.length;
+        }
+        else if (_.isObject(el)) {
+            length = o.keys(el).length;
+        }
+        else if (_.isNumber(el)) {
+            el = el.toString().split('.')[0];
+            length = el.length;
+        }
+        return length;
     };
     Util.prototype.trunc = function (text, length, separator) {
         var len = length || text.length, codes = _.isNull(separator) ? '...' : separator.toString();
