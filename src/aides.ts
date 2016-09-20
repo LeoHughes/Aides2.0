@@ -118,18 +118,3 @@ class Aides {
 
 export { Aides }
 
-
-/**
- * 如果是浏览器环境，将工具包附加在window上
- */
-
-// if (window) {
-
-//   (function (window) {
-
-//     window._ = new Aides();
-
-//   })(window);
-
-// }
-
