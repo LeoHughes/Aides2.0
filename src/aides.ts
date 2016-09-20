@@ -1,30 +1,117 @@
 import { Reg } from './reg';
 import { Util } from './util';
-import { Store } from './store';
 import { Arr } from './arr';
 import { Obj } from './obj';
+
+const reg = new Reg(),
+  util = new Util(),
+  arr = new Arr(),
+  obj = new Obj();
+
 
 /**
  * Aides
  */
 class Aides {
 
-  protected reg: Reg;
+  private isNull = reg.isNull;
 
-  protected util: Util;
+  private isArray = reg.isArray;
 
-  protected store: Store;
+  private isFunction = reg.isFunction;
 
-  protected arr: Arr;
+  private isObject = reg.isObject;
 
-  protected obj: Obj;
+  private isString = reg.isString;
+
+  private isNumber = reg.isNumber;
+
+  private isBoolean = reg.isBoolean;
+
+  private isEmpty = reg.isEmpty;
+
+  private isDate = reg.isDate;
+
+  private isEmail = reg.isEmail;
+
+  private isIP = reg.isIP;
+
+  private isVerifyAccount = reg.isVerifyAccount;
+
+  private isUrl = reg.isUrl;
+
+  private existCN = reg.existCN;
+
+  private trim = reg.trim;
+
+  private clearSpace = reg.clearSpace;
+
+  private getNum = reg.getNum;
+
+  private getCN = reg.getCN;
+
+  private excludeHTML = reg.excludeHTML;
+
+  private excludeStyle = reg.excludeStyle;
+
+  private log = util.log;
+
+  private size = util.size;
+
+  private trunc = util.trunc;
+
+  private repeat = util.repeat;
+
+  private getDate = util.getDate;
+
+  private getCNDate = util.getCNDate;
+
+  private getTimes = util.getTimes;
+
+  private getCNTimes = util.getCNTimes;
+
+  private exNum = util.exNum;
+
+  private randomNum = util.randomNum;
+
+  private getCode = util.getCode;
+
+  private getWeek = util.getWeek;
+
+  private now = util.now;
+
+  private setTimesDo = util.setTimesDo;
+
+  private chunk = arr.chunk;
+
+  private compact = arr.compact;
+
+  private getMin = arr.getMin;
+
+  private getMax = arr.getMax;
+
+  private unique = arr.unique;
+
+  private concat = arr.concat;
+
+  private toObj = arr.toObj;
+
+  private has = obj.has;
+
+  private keys = obj.keys;
+
+  private values = obj.values;
+
+  private methods = obj.methods;
+
+  private objCompact = obj.objCompact;
+
+  private pickKeys = obj.pickKeys;
+
+  private assign = obj.assign;
 
   constructor() {
-    this.reg = new Reg();
-    this.util = new Util();
-    this.store = new Store();
-    this.arr = new Arr();
-    this.obj = new Obj();
+
   }
 
 }
@@ -36,13 +123,13 @@ export { Aides }
  * 如果是浏览器环境，将工具包附加在window上
  */
 
-if (window) {
+// if (window) {
 
-  (function (window) {
+//   (function (window) {
 
-    window._ = new Aides();
+//     window._ = new Aides();
 
-  })(window);
+//   })(window);
 
-}
+// }
 

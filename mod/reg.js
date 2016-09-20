@@ -67,7 +67,7 @@ var Reg = (function () {
     Reg.prototype.isDate = function (time) {
         return this._testRE(date_reg, time);
     };
-    Reg.prototype.isEamil = function (email) {
+    Reg.prototype.isEmail = function (email) {
         return this._testRE(email_reg, email);
     };
     Reg.prototype.isIP = function (ip) {

@@ -22,12 +22,12 @@ gulp.task("ts", function () {
 gulp.task("webpack", function () {
 
   return webpack({
-    entry: "./src/aides.ts",
+    entry: "./src/aidesWin.ts",
     resolve: {
       extensions: ['', '.ts']
     },
     output: {
-      filename: 'aides.js'
+      filename: 'aidesWin.js'
     },
     module: {
       loaders: [
@@ -45,9 +45,9 @@ gulp.task("es5", ["webpack"], function () {
     .pipe(babel({
       presets: ["es2015"]
     }))
-     .pipe(
-        uglify()
-     )             
+    //  .pipe(
+    //     uglify()
+    //  )             
     .pipe(gulp.dest("dist"));
 })
 

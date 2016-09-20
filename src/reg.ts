@@ -132,7 +132,7 @@ class Reg {
   }
 
   /**验证邮箱 */
-  isEamil(email: string): boolean {
+  isEmail(email: string): boolean {
     return this._testRE(email_reg, email);
   }
 
