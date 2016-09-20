@@ -5,8 +5,8 @@
     "src/reg.ts",
     "src/util.ts",
     "src/store.ts",
-    "src/array.ts",
-    "src/object.ts"
+    "src/arr.ts",
+    "src/obj.ts"
   ],
   //设置编译选项
   "compilerOptions": {

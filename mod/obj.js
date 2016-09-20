@@ -1,9 +1,9 @@
 var reg_1 = require('./reg');
 var _ = new reg_1.Reg();
-var Object = (function () {
-    function Object() {
+var Obj = (function () {
+    function Obj() {
     }
-    Object.prototype.has = function (obj, key) {
+    Obj.prototype.has = function (obj, key) {
         var flag = false;
         if (_.isObject(obj)) {
             for (var v in obj) {
@@ -13,7 +13,7 @@ var Object = (function () {
         }
         return flag;
     };
-    Object.prototype.keys = function (obj) {
+    Obj.prototype.keys = function (obj) {
         var oArr = [];
         if (_.isObject(obj)) {
             for (var p in obj) {
@@ -23,7 +23,7 @@ var Object = (function () {
         }
         return oArr;
     };
-    Object.prototype.values = function (obj) {
+    Obj.prototype.values = function (obj) {
         var oArr = [];
         if (_.isObject(obj)) {
             for (var v in obj) {
@@ -33,7 +33,7 @@ var Object = (function () {
         }
         return oArr;
     };
-    Object.prototype.methods = function (obj) {
+    Obj.prototype.methods = function (obj) {
         var oArr = [];
         for (var v in obj) {
             if (_.isFunction(obj[v]))
@@ -41,7 +41,7 @@ var Object = (function () {
         }
         return oArr;
     };
-    Object.prototype.objCompact = function (obj) {
+    Obj.prototype.objCompact = function (obj) {
         var newObj = {};
         for (var v in obj) {
             if (obj[v]) {
@@ -50,7 +50,7 @@ var Object = (function () {
         }
         return newObj;
     };
-    Object.prototype.pickKeys = function (obj, keys) {
+    Obj.prototype.pickKeys = function (obj, keys) {
         var newObj = {};
         for (var v in keys) {
             if (obj.hasOwnProperty(keys[v])) {
@@ -59,6 +59,6 @@ var Object = (function () {
         }
         return newObj;
     };
-    return Object;
+    return Obj;
 }());
-exports.Object = Object;
+exports.Obj = Obj;

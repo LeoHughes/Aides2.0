@@ -1,8 +1,8 @@
 import { Reg } from './reg';
 import { Util } from './util';
 import { Store } from './store';
-import { Array } from './array';
-import { Object } from './object';
+import { Arr } from './arr';
+import { Obj } from './obj';
 
 /**
  * Aides
@@ -15,16 +15,16 @@ class Aides {
 
   protected store: Store;
 
-  protected array: Array;
+  protected arr: Arr;
 
-  protected object: Object;
+  protected obj: Obj;
 
   constructor() {
     this.reg = new Reg();
     this.util = new Util();
     this.store = new Store();
-    this.array = new Array();
-    this.object = new Object();
+    this.arr = new Arr();
+    this.obj = new Obj();
   }
 
 }

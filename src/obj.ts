@@ -5,7 +5,7 @@ const _ = new Reg();
 /**
  * Object
  */
-class Object {
+class Obj {
 
   /**
    * 如果对象包含给定的键，返回true。
@@ -101,4 +101,4 @@ class Object {
 
 }
 
-export { Object }
+export { Obj }

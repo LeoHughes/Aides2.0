@@ -7,7 +7,7 @@ const _ = new Reg();
  */
 
 
-class Array {
+class Arr {
 
   /**
    * 将 array 拆分成多个 size 长度的数组
@@ -55,4 +55,4 @@ class Array {
 
 }
 
-export { Array }
+export { Arr }

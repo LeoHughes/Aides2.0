@@ -51,15 +51,15 @@
 	var reg_1 = __webpack_require__(1);
 	var util_1 = __webpack_require__(2);
 	var store_1 = __webpack_require__(3);
-	var array_1 = __webpack_require__(4);
-	var object_1 = __webpack_require__(5);
+	var arr_1 = __webpack_require__(4);
+	var obj_1 = __webpack_require__(5);
 	var Aides = function () {
 		function Aides() {
 			this.reg = new reg_1.Reg();
 			this.util = new util_1.Util();
 			this.store = new store_1.Store();
-			this.array = new array_1.Array();
-			this.object = new object_1.Object();
+			this.arr = new arr_1.Arr();
+			this.obj = new obj_1.Obj();
 		}
 		return Aides;
 	}();
@@ -415,9 +415,9 @@
 
 	var reg_1 = __webpack_require__(1);
 	var _ = new reg_1.Reg();
-	var Array = function () {
-		function Array() {}
-		Array.prototype.chunk = function (arr, size) {
+	var Arr = function () {
+		function Arr() {}
+		Arr.prototype.chunk = function (arr, size) {
 			var outArr = [],
 			    length = arr.length;
 			for (var i = 0; i < length; i += size) {
@@ -426,7 +426,7 @@
 			}
 			return outArr;
 		};
-		Array.prototype.compact = function (arr) {
+		Arr.prototype.compact = function (arr) {
 			var outArr = [];
 			for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
 				var v = arr_1[_i];
@@ -434,16 +434,16 @@
 			}
 			return outArr;
 		};
-		Array.prototype.delValue = function (arr, val) {
+		Arr.prototype.delValue = function (arr, val) {
 			for (var _i = 0, arr_2 = arr; _i < arr_2.length; _i++) {
 				var v = arr_2[_i];
 				if (v == val) arr.splice(arr.indexOf(v), 1);
 			}
 			return arr;
 		};
-		return Array;
+		return Arr;
 	}();
-	exports.Array = Array;
+	exports.Arr = Arr;
 
 	/***/
 },
@@ -452,9 +452,9 @@
 
 	var reg_1 = __webpack_require__(1);
 	var _ = new reg_1.Reg();
-	var Object = function () {
-		function Object() {}
-		Object.prototype.has = function (obj, key) {
+	var Obj = function () {
+		function Obj() {}
+		Obj.prototype.has = function (obj, key) {
 			var flag = false;
 			if (_.isObject(obj)) {
 				for (var v in obj) {
@@ -463,7 +463,7 @@
 			}
 			return flag;
 		};
-		Object.prototype.keys = function (obj) {
+		Obj.prototype.keys = function (obj) {
 			var oArr = [];
 			if (_.isObject(obj)) {
 				for (var p in obj) {
@@ -472,7 +472,7 @@
 			}
 			return oArr;
 		};
-		Object.prototype.values = function (obj) {
+		Obj.prototype.values = function (obj) {
 			var oArr = [];
 			if (_.isObject(obj)) {
 				for (var v in obj) {
@@ -481,14 +481,14 @@
 			}
 			return oArr;
 		};
-		Object.prototype.methods = function (obj) {
+		Obj.prototype.methods = function (obj) {
 			var oArr = [];
 			for (var v in obj) {
 				if (_.isFunction(obj[v])) oArr.push(v);
 			}
 			return oArr;
 		};
-		Object.prototype.objCompact = function (obj) {
+		Obj.prototype.objCompact = function (obj) {
 			var newObj = {};
 			for (var v in obj) {
 				if (obj[v]) {
@@ -497,7 +497,7 @@
 			}
 			return newObj;
 		};
-		Object.prototype.pickKeys = function (obj, keys) {
+		Obj.prototype.pickKeys = function (obj, keys) {
 			var newObj = {};
 			for (var v in keys) {
 				if (obj.hasOwnProperty(keys[v])) {
@@ -506,9 +506,9 @@
 			}
 			return newObj;
 		};
-		return Object;
+		return Obj;
 	}();
-	exports.Object = Object;
+	exports.Obj = Obj;
 
 	/***/
 }
