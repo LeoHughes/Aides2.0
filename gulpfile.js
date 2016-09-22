@@ -45,9 +45,9 @@ gulp.task("es5", ["webpack"], function () {
     .pipe(babel({
       presets: ["es2015"]
     }))
-    //  .pipe(
-    //     uglify()
-    //  )             
+     .pipe(
+        uglify()
+     )             
     .pipe(gulp.dest("dist"));
 })
 
