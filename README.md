@@ -7,7 +7,7 @@ Aides2.0
 |-- README.md
 |-- package.json
 |-- dist          # 统一打包构建目录
-  |-- aidesWin.js
+  |-- aidesWin.min.js
 |-- mod           # 以commonjs模块化分别打包的工具包
   |-- aides.js     
 |-- src           # 源码目录
