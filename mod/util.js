@@ -126,11 +126,11 @@ var Util = (function () {
     Util.prototype.setTimesDo = function (callback, time, endTime, endCallback) {
         if (!_.isNull(time) && !_.isNull(callback)) {
             if (endTime) {
-                var t = setInterval(function () {
+                var t_1 = setInterval(function () {
                     callback();
                 }, time);
                 setTimeout(function () {
-                    clearInterval(t);
+                    clearInterval(t_1);
                     if (endCallback)
                         endCallback();
                 }, time + endTime);
