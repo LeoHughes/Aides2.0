@@ -1,4 +1,5 @@
 ## Aides工具包2.0
+***
 
 ```
 Aides2.0
@@ -21,6 +22,7 @@ Aides2.0
 |-- tsconfig.json # Typescript编译配置文件
 |-- .babelrc      # babel编译配置文件
 ```
+***
 
 ### aides Module
 
@@ -55,11 +57,38 @@ reg模块，主要是一些验证的方法
 ### store Module
 
 ```
-store模块，主要是操作浏览器端cookie和localStorage的辅助方法
+store模块，主要是操作浏览器端cookie和localStorage的辅助方法，所以此模块在node后台环境下单独引入会失效
 ```
 
 ### util Module
 
 ```
 util模块，一些杂项的辅助方法
+```
+
+### 引入
+
+**浏览器端**：直接引入dist文件夹下的aidesWin.js
+```js
+<script src="dist/aidesWin.js"></script>
+```
+
+**commonjs**：将mod目录拷贝到项目内
+
+```js
+const Aides = require('./mod/aides');
+
+const _ = new Aides.Aides();
+
+console.log(_.size('abcd')); //4
+```
+
+或者单独引入某个模块
+
+```js
+var Util = require('./util');
+
+var _ = new Util.Util();
+
+console.log(_.exNum('123')); //一二三
 ```
