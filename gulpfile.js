@@ -41,7 +41,7 @@ gulp.task("webpack", function () {
 
 //编译为es5
 gulp.task("es5", ["webpack"], function () {
-  return gulp.src(["./dist/aides.js"])
+  return gulp.src(["./dist/aidesWin.js"])
     .pipe(babel({
       presets: ["es2015"]
     }))
