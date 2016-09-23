@@ -54,30 +54,30 @@ var Util = (function () {
     };
     Util.prototype.getDate = function (sepr) {
         if (sepr === void 0) { sepr = '/'; }
-        var dateArr = this._getDate();
+        var dateArr = this.getDateArr();
         return "" + dateArr[0] + sepr + dateArr[1] + sepr + dateArr[2];
     };
     Util.prototype.getCNDate = function () {
-        var dateArr = this._getDate();
+        var dateArr = this.getDateArr();
         return dateArr[0] + "\u5E74" + dateArr[1] + "\u6708" + dateArr[2] + "\u65E5";
     };
     Util.prototype.getTimes = function (sepr) {
         if (sepr === void 0) { sepr = ':'; }
-        var dateArr = this._getTimes();
+        var dateArr = this.getTimesArr();
         return "" + dateArr[0] + sepr + dateArr[1] + sepr + dateArr[2];
     };
     Util.prototype.getCNTimes = function () {
-        var dateArr = this._getTimes();
+        var dateArr = this.getTimesArr();
         return dateArr[0] + "\u65F6" + dateArr[1] + "\u5206" + dateArr[2] + "\u79D2";
     };
-    Util.prototype._getDate = function () {
+    Util.prototype.getDateArr = function () {
         var time = new Date(), year = time.getFullYear(), m = time.getMonth() + 1, month = m < 10 ? ('0' + m) : m, d = time.getDate(), day = d < 10 ? ('0' + d) : d, outArr = [];
         outArr.push(year.toString());
         outArr.push(month.toString());
         outArr.push(day.toString());
         return outArr;
     };
-    Util.prototype._getTimes = function () {
+    Util.prototype.getTimesArr = function () {
         var time = new Date(), hours = time.getHours(), m = time.getMinutes(), minutes = m < 10 ? ('0' + m) : m, s = time.getSeconds(), seconds = s < 10 ? ('0' + s) : s, outArr = [];
         outArr.push(hours.toString());
         outArr.push(minutes.toString());
@@ -103,7 +103,7 @@ var Util = (function () {
         return '星期' + this.exNum(new Date(date).getDay());
     };
     Util.prototype.now = function () {
-        var tArr = this._getDate().concat(this._getTimes());
+        var tArr = this.getDateArr().concat(this.getTimesArr());
         return tArr.join('');
     };
     Util.prototype.getUrlParam = function () {

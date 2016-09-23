@@ -91,7 +91,7 @@ class Util {
    *
    */
   getDate(sepr = '/'): string {
-    const dateArr = this._getDate();
+    const dateArr = this.getDateArr();
 
     return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`;
   }
@@ -100,7 +100,7 @@ class Util {
    * 获取当前日期中文格式(年月日)
    */
   getCNDate(): string {
-    const dateArr = this._getDate();
+    const dateArr = this.getDateArr();
 
     return `${dateArr[0]}年${dateArr[1]}月${dateArr[2]}日`;
   }
@@ -110,7 +110,7 @@ class Util {
    *
    */
   getTimes(sepr = ':'): string {
-    const dateArr = this._getTimes();
+    const dateArr = this.getTimesArr();
 
     return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`;
 
@@ -121,7 +121,7 @@ class Util {
    *
    */
   getCNTimes(): string {
-    const dateArr = this._getTimes();
+    const dateArr = this.getTimesArr();
 
     return `${dateArr[0]}时${dateArr[1]}分${dateArr[2]}秒`;
 
@@ -131,7 +131,7 @@ class Util {
    * 以数组返回当前时间[年月日]
    *
    */
-  private _getDate(): Array<string> {
+  getDateArr(): Array<string> {
     let time = new Date(),
       year = time.getFullYear(),
       m = time.getMonth() + 1,
@@ -151,7 +151,7 @@ class Util {
    * 以数组返回当前时间[时分秒]
    *
    */
-  private _getTimes(): Array<string> {
+  getTimesArr(): Array<string> {
     var time = new Date(),
       hours = time.getHours(),
       m = time.getMinutes(),
@@ -216,7 +216,7 @@ class Util {
    *
    */
   now(): string {
-    const tArr = this._getDate().concat(this._getTimes());
+    const tArr = this.getDateArr().concat(this.getTimesArr());
     return tArr.join('');
   }
 

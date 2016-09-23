@@ -70,6 +70,10 @@ class Aides {
 
   private getCNTimes = util.getCNTimes;
 
+  private getDateArr = util.getDateArr;
+
+  private getTimesArr = util.getTimesArr;
+
   private exNum = util.exNum;
 
   private randomNum = util.randomNum;
