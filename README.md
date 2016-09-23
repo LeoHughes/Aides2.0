@@ -10,6 +10,7 @@ Aides2.0
   |-- aidesWin.min.js
 |-- mod           # 以commonjs模块化分别打包的工具包
   |-- aides.js     
+  ...
 |-- src           # 源码目录
   |-- aides.ts    
   |-- aidesWin.ts
