@@ -258,14 +258,18 @@ class Util {
   setTimesDo(callback: any, time: number, endTime: number, endCallback: any): void {
 
     if (!_.isNull(time) && !_.isNull(callback)) {
+
       if (endTime) {
-        var t = setInterval(function () {
+
+        let t = setInterval(function () {
           callback();
         }, time);
+        
         setTimeout(function () {
           clearInterval(t);
           if (endCallback) endCallback();
         }, time + endTime);
+
       } else {
         setInterval(callback, time);
       }
