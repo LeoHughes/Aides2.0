@@ -70,7 +70,7 @@ util模块，一些杂项的辅助方法
 
 **浏览器端**：直接引入dist文件夹下的aidesWin.js
 ```js
-<script src="dist/aidesWin.js"></script>
+<script src="dist/aidesWin.min.js"></script>
 ```
 
 **commonjs**：将mod目录拷贝到项目内

@@ -27,7 +27,7 @@ gulp.task("webpack", function () {
       extensions: ['', '.ts']
     },
     output: {
-      filename: 'aidesWin.js'
+      filename: 'aidesWin.min.js'
     },
     module: {
       loaders: [
@@ -41,7 +41,7 @@ gulp.task("webpack", function () {
 
 //编译为es5
 gulp.task("es5", ["webpack"], function () {
-  return gulp.src(["./dist/aidesWin.js"])
+  return gulp.src(["./dist/aidesWin.min.js"])
     .pipe(babel({
       presets: ["es2015"]
     }))
