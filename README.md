@@ -76,6 +76,8 @@ util模块，一些杂项的辅助方法
 
 **commonjs**：将mod目录拷贝到项目内
 
+统一引入整个工具包
+
 ```js
 const Aides = require('./mod/aides');
 
