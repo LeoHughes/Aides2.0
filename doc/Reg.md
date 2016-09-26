@@ -112,3 +112,25 @@ let a = '2016-10-01',
 _.isDate(a); //true
 _.isDate(b); //false
 ```
+
+>***isEmail***
+>验证邮箱
+
+```js
+let a = 'zhihy123@qq.com',
+    b = 'Leo#Hughes.com';
+
+_.isEmail(a); //true
+_.isEmail(b); //false
+```
+
+>***isIP***
+>验证ip
+
+```js
+let a = '192.168.1.1',
+    b = '1991.05.09.1103';
+
+_.isIP(a); //true
+_.isIP(b); //false
+```
