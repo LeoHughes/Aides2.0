@@ -181,7 +181,16 @@ _.trim(a); //abc
 >过滤字符串中的空格
 
 ```js
-leta = ' a b c';
+let a = ' a b c';
 
 _.clearSpace(a); //abc
+```
+
+>***getNum***
+>保留数字
+
+```js
+let a = 'a1b2c3d4';
+
+_.getNum(a); //1234
 ```
