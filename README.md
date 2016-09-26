@@ -89,7 +89,7 @@ console.log(_.size('abcd')); //4
 或者单独引入某个模块
 
 ```js
-const Util = require('./util');
+const Util = require('./mod/util');
 
 const _ = new Util.Util();
 
