@@ -134,3 +134,54 @@ let a = '192.168.1.1',
 _.isIP(a); //true
 _.isIP(b); //false
 ```
+
+>***isVerifyAccount***
+>验证账号或密码(字母开头，允许6-15字节，允许字母数字下划线)
+
+```js
+let a = 'zhihy',
+    b = 'zhihy_123';
+
+_.isVerifyAccount(a); //false
+_.isVerifyAccount(b); //true
+```
+
+>***isUrl***
+>验证网址url
+
+```js
+let a = 'bing.com',
+    b = 'http://cn.bing.com/';
+
+_.isUrl(a); //false
+_.isUrl(b); //true
+```
+
+>***existCN***
+>检测字符串中是否包含中文
+
+```js
+let a = 'I’m 修斯',
+    b = 'I’m LeoHughes';
+
+_.existCN(a); //true
+_.existCN(b); //false
+```
+
+>***trim***
+>去除字符串左右空格
+
+```js
+let a = ' abc ';
+
+_.trim(a); //abc
+```
+
+>***clearSpace***
+>过滤字符串中的空格
+
+```js
+leta = ' a b c';
+
+_.clearSpace(a); //abc
+```
