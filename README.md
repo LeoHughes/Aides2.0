@@ -93,3 +93,7 @@ var _ = new Util.Util();
 
 console.log(_.exNum('123')); //一二三
 ```
+
+### 使用手册
+
+[API](https://github.com/LeoHughes/Aides2.0/wiki)
