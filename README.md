@@ -51,11 +51,9 @@ obj模块，主要是Object的辅助方法
 ```
 
 ### reg Module
-
+[API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Reg.md)
 ```
 reg模块，主要是一些验证的方法
-
-[API][1]
 ```
 
 ### store Module
@@ -96,6 +94,3 @@ const _ = new Util.Util();
 
 console.log(_.exNum('123')); //一二三
 ```
-
-
-  [1]: https://github.com/LeoHughes/Aides2.0/blob/master/doc/Reg.md
