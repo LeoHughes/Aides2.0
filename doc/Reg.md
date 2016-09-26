@@ -7,6 +7,8 @@ const Reg = require('./mode/reg');
 const _ = new Reg.Reg();
 ```
 
+***
+
 >***isNull***
 >检测类型是否是Null、undefined或者''
 
