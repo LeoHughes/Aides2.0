@@ -27,3 +27,40 @@ let a = '123',
 _.isArray(a); //false
 _.isArray(b); //true
 ```
+
+>***isFunction***
+>检测类型是否是Function
+
+```js
+let a = function(){},
+    b = {};
+
+_.isFunction(a); //true
+_.isFunction(b); //false
+```
+
+>***isObject***
+>检测类型是否是Object
+
+```js
+let a = {},
+    b = [],
+    c = '123',
+    d = null;
+
+_.isObject(a); //true
+_.isObject(b); //false
+_.isObject(c); //false
+_.isObject(d); //false
+```
+
+>***isString***
+>检测类型是否是String
+
+```js
+let a = {},
+    b = '123';
+
+_.isString(a); //false
+_.isString(b); //true
+```
