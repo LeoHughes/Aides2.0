@@ -194,3 +194,30 @@ let a = 'a1b2c3d4';
 
 _.getNum(a); //1234
 ```
+
+>***getCN***
+>保留中文
+
+```js
+let a = 'I’m 修斯';
+
+_.getCN(a); //修斯
+```
+
+>***excludeHTML***
+>过滤HTML标签和\&nbsp;
+
+```js
+let a = '<h1>a&nbsp;b&nbsp;</h1>';
+
+_.excludeHTML(a); //ab
+```
+
+>***excludeStyle***
+>过滤HTML标签内联样式但保留HTML标签
+
+```js
+let a = '<a style="color:red;"></a>';
+
+_.excludeStyle(a); //<a></a>
+```
