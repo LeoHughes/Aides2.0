@@ -93,3 +93,11 @@ const _ = new Util.Util();
 
 console.log(_.exNum('123')); //一二三
 ```
+
+### API
+
+* [Arr API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Arr.md)
+* [Obj API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Obj.md)
+* [Reg API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Reg.md)
+* [Store API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Store.md)
+* [Util Api](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Util.md)
