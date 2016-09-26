@@ -66,3 +66,49 @@ let a = {},
 _.isString(a); //false
 _.isString(b); //true
 ```
+
+>***isNumber***
+>检测类型是否是Number
+
+```js
+let a = 123,
+    b = '123';
+
+_.isNumber(a); //true
+_.isNumber(b); //false
+```
+
+>***isBoolean***
+>检测类型是否是Boolean
+
+```js
+let a = true,
+    b = 'true';
+
+_.isBoolean(a); //true
+_.isBoolean(b); //false
+```
+
+>***isEmpty***
+>如果object 不包含任何值，返回true。 对于字符串和数组对象，如length属性为0，那么返回true。
+
+```js
+let a = {'name':'leo'},
+    b = [],
+    c = '123';
+
+_.isEmpty(a); //false
+_.isEmpty(b); //true
+_.isEmpty(c); //false
+```
+
+>***isDate***
+>验证日期格式[yyyy-mm-dd]
+
+```js
+let a = '2016-10-01',
+    b = '2016/10/01';
+
+_.isDate(a); //true
+_.isDate(b); //false
+```
