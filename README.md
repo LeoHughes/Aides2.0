@@ -19,6 +19,7 @@ Aides2.0
   |-- reg.ts      
   |-- store.ts     
   |-- util.ts     # util模块，一些杂项的辅助方法
+|-- doc           # 文档和demo
 |-- gulpfile.js   # Gulp构建文件
 |-- tsconfig.json # Typescript编译配置文件
 |-- .babelrc      # babel编译配置文件
@@ -34,7 +35,7 @@ Aides2.0
 ### aidesWin Module
 
 ```
-统一工具包(包含Store模块),直接适用于浏览器端
+统一工具包(包含Store模块),直接适用于浏览器端,所有方法注册在全局变量_下
 ```
 
 ### arr Module
@@ -87,13 +88,9 @@ console.log(_.size('abcd')); //4
 或者单独引入某个模块
 
 ```js
-var Util = require('./util');
+const Util = require('./util');
 
-var _ = new Util.Util();
+const _ = new Util.Util();
 
 console.log(_.exNum('123')); //一二三
 ```
-
-### 使用手册
-
-[API](https://github.com/LeoHughes/Aides2.0/wiki)
