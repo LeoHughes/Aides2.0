@@ -73,7 +73,7 @@ class Arr {
    * 数组去除重复项[字符串数字和数字视为不同处理]
    * 
    */
-  unique(arr: any[]): any {
+  unique(arr: any[]): any[] {
     let uq = {},
       outArr = [],
       prefix = '';
@@ -98,7 +98,7 @@ class Arr {
    * 数组合并去重 [字符串数字和数字视为不同处理]
    * 
    */
-  concat(...arr: any[]): any {
+  concat(...arr: any[]): any[] {
     return this.unique([].concat(...arr));
   }
 
