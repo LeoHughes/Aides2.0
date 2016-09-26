@@ -51,7 +51,6 @@ obj模块，主要是Object的辅助方法
 ```
 
 ### reg Module
-[API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Reg.md)
 ```
 reg模块，主要是一些验证的方法
 ```
