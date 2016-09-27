@@ -18,7 +18,7 @@ Aides2.0
   |-- obj.ts       
   |-- reg.ts      
   |-- store.ts     
-  |-- util.ts     # util模块，一些杂项的辅助方法
+  |-- util.ts     
 |-- doc           # 文档和demo
 |-- gulpfile.js   # Gulp构建文件
 |-- tsconfig.json # Typescript编译配置文件
