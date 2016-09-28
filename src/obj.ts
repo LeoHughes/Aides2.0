@@ -24,7 +24,7 @@ class Obj {
   }
 
   /**
-   * 获取object对象所有的属性名称。
+   * 返回object对象所有的键。
    * 
    */
   keys(obj: any): any[] {
@@ -39,7 +39,7 @@ class Obj {
   }
 
   /**
-   * 返回object对象所有的属性值。
+   * 返回object对象所有的值。
    * 
    */
   values(obj: any): any[] {
@@ -54,7 +54,7 @@ class Obj {
   }
 
   /**
-   * 返回一个对象里所有的方法名, 已经排序的数组.
+   * 返回一个对象里所有的方法名, 已经排序的数组。
    * 
    */
   methods(obj: any): any[] {
