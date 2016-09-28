@@ -170,9 +170,9 @@ class Util {
   /**
    * 将阿拉伯数字转为汉字数字
    */
-  exNum(year: number | string): string {
+  exNum(charNum: number | string): string {
     var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
-      num = year.toString(),
+      num = charNum.toString(),
       numArr = num.split(''),
       len = numArr.length,
       result = '';

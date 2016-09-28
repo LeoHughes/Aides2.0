@@ -102,3 +102,6 @@ console.log(_.exNum('123')); //一二三
 * [Reg API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Reg.md)
 * [Store API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Store.md)
 * [Util API](https://github.com/LeoHughes/Aides2.0/blob/master/doc/Util.md)
+
+***
+感谢小伙伴[Rancho](https://github.com/ranchoopenwrt)的协助。
