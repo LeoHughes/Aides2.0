@@ -109,3 +109,44 @@ _.getCode(8); //8c5116f0
 _.getWeek(); //星期三
 _.getWeek('2016-09-29'); //星期四
 ```
+
+>***now***
+>来获得一个当前时间的整数时间戳
+
+```js
+_.now(); //20160928190832
+```
+
+>***getUrlParam***
+>获取url参数并转为string|object返回[只适用于浏览器端]
+
+```js
+//'http://www.baidu.com?leo'
+ _.getUrlParam(); //'leo'
+
+//'http://www.baidu.com?name=leo&age=25'
+ _.getUrlParam(); //{'name':'leo','age':'25'}
+```
+
+>***setTimesDo***
+>setInterval方法
+*  callback 执行方法
+*  time 执行间隔时间
+*  endTime 结束时间[为空将一直执行]
+*  endCallback 结束后的执行方法
+
+```js
+var i = 0;
+_.setTimesDo(function(){
+    console.log(i++);
+},1000,5000,function(){
+    console.log('end');
+})
+//0
+//1
+//2
+//3
+//4
+//5
+//end
+```
