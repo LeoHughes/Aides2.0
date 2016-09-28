@@ -192,13 +192,13 @@ class Util {
   }
 
   /**
-   * 随机验证码
+   * 随机验证码[0-12位]
    * 
    * num:验证码位数
    */
-  getCode(num: number): string {
+  getCode(num = 4): string {
     let random = Math.random();
-    return random.toString(16).substr(2, num);
+    return random.toString(16).substr(3, num);
   }
 
   /**

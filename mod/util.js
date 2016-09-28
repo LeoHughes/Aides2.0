@@ -95,8 +95,9 @@ var Util = (function () {
         return Math.floor(Math.random() * (end - start) + start);
     };
     Util.prototype.getCode = function (num) {
+        if (num === void 0) { num = 4; }
         var random = Math.random();
-        return random.toString(16).substr(2, num);
+        return random.toString(16).substr(3, num);
     };
     Util.prototype.getWeek = function (date) {
         date = date || (this.getDate('-'));
