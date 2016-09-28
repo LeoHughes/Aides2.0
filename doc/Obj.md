@@ -45,3 +45,32 @@ let a = {'name':'Leo','age':25,'say':function(){alert('hello')}};
 
 _.methods(a); //['say']
 ```
+
+>***objCompact***
+>去除对象里的假值键
+
+```js
+let a = {'name':'Leo','age':'','email':null}
+
+_.objCompact(a); //{name: "Leo"}
+```
+
+>***pickKeys***
+>返回一个object副本，只过滤出keys[数组]参数指定的属性值。
+
+```js
+let a = {'name':'Leo','age':25,'say':function(){alert('hello')}};
+
+_.pickKeys(a,['age','say']); //{'age':25,'say':function(){alert('hello')}};
+```
+
+>***assign***
+>将对象合并为一个对象返回
+
+```js
+let a = {'name':'Leo'},
+    b = {'age':25},
+    c = {'email':'zhihy123@qq.com'};
+
+_.assign({},a,b,c); //{name: "Leo", age: 25, email: "zhihy123@qq.com"}
+```
