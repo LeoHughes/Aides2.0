@@ -5,6 +5,7 @@ var obj_1 = require('./obj');
 var reg = new reg_1.Reg(), util = new util_1.Util(), arr = new arr_1.Arr(), obj = new obj_1.Obj();
 var Aides = (function () {
     function Aides() {
+        var _this = this;
         this.isNull = reg.isNull;
         this.isArray = reg.isArray;
         this.isFunction = reg.isFunction;
@@ -55,6 +56,18 @@ var Aides = (function () {
         this.objCompact = obj.objCompact;
         this.pickKeys = obj.pickKeys;
         this.assign = obj.assign;
+        this.all = function () {
+            var fucArr = _this.methods(_this);
+            for (var v in fucArr) {
+                _this.log("[" + fucArr[v] + "]", 'info');
+            }
+        };
+        this.extend = function (key, fn) {
+            var fucArr = _this.methods(_this);
+            if (fucArr.indexOf(key) === -1) {
+                _this[key] = fn;
+            }
+        };
     }
     return Aides;
 }());

@@ -114,6 +114,21 @@ class Aides {
 
   private assign = obj.assign;
 
+  private all = ()=>{
+    const fucArr = this.methods(this);
+    for (let v in fucArr) {
+      this.log(`[${fucArr[v]}]`,'info');
+    }
+  }
+
+  private extend = (key:string, fn:string)=>{
+    const fucArr = this.methods(this);
+
+    if(fucArr.indexOf(key) === -1){
+      this[key] = fn;
+    }
+  }
+
   constructor() {
 
   }
