@@ -26,3 +26,52 @@ let a = [null,1,undefined,2,'',3];
 
 _.compact(a); //[1,2,3]
 ```
+
+>***getMin***
+>获得数字数组中最小值 [会先剔除掉假值再返回最小值]
+
+```js
+let a = [null,1,undefined,2,'',3];
+
+_.getMin(a); //1
+```
+
+>***getMax***
+>获得数字数组中最小值 [会先剔除掉假值再返回最小值]
+
+```js
+let a = [null,1,undefined,2,'',3];
+
+_.getMax(a); //3
+```
+
+>***unique***
+>数组去除重复项[字符串数字和数字视为不同处理]
+
+```js
+let a = [null,1,undefined,2,'',3,'1',2,'3'];
+
+_.unique(a); //[null,1,undefined,2,'',3,'1','3' ]
+```
+
+>***concat***
+>数组合并去重 [字符串数字和数字视为不同处理]
+
+```js
+let a = [null,1,undefined,2,''],
+    b = [3,'1',2,'3'];
+
+_.concat(a,b); //[null, 1, undefined, 2, "", 3, "1", "3"]
+```
+
+>***toObj***
+>将数组转换为对象。
+   * list 键列表
+   * values 值列表
+
+```js
+let a = ['name','age','email'],
+    b = ['Leo','25','zhihy123@qq.com'];
+
+_.toObj(a,b); //{name: "Leo", age: "25", email: "zhihy123@qq.com"}
+```

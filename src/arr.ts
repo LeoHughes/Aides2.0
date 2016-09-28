@@ -99,6 +99,7 @@ class Arr {
    * 
    */
   concat(...arr: any[]): any[] {
+    console.log([].concat(...arr));
     return this.unique([].concat(...arr));
   }
 
@@ -113,7 +114,7 @@ class Arr {
     let nObj = {};
 
     for (var v in list) {
-      if (!values[v]) nObj[list[v]] = undefined;
+      if (!values[v]) nObj[list[v]] = null;
       nObj[list[v]] = values[v];
     }
 

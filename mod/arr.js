@@ -57,14 +57,15 @@ var Arr = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             arr[_i - 0] = arguments[_i];
         }
-        return this.unique((_a = []).concat.apply(_a, arr));
-        var _a;
+        console.log((_a = []).concat.apply(_a, arr));
+        return this.unique((_b = []).concat.apply(_b, arr));
+        var _a, _b;
     };
     Arr.prototype.toObj = function (list, values) {
         var nObj = {};
         for (var v in list) {
             if (!values[v])
-                nObj[list[v]] = undefined;
+                nObj[list[v]] = null;
             nObj[list[v]] = values[v];
         }
         return nObj;
