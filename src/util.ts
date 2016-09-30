@@ -60,9 +60,8 @@ class Util {
    * separator:截断的符号
    *
    */
-  trunc(text: string, length: number, separator: string): string {
-    let len = length || text.length,
-      codes = _.isNull(separator) ? '...' : separator.toString();
+  trunc(text: string, len: number, separator: string): string {
+    let codes = _.isNull(separator) ? '...' : separator.toString();
 
     return (text.substring(0, len) + codes);
   }

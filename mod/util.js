@@ -39,8 +39,8 @@ var Util = (function () {
         }
         return length;
     };
-    Util.prototype.trunc = function (text, length, separator) {
-        var len = length || text.length, codes = _.isNull(separator) ? '...' : separator.toString();
+    Util.prototype.trunc = function (text, len, separator) {
+        var codes = _.isNull(separator) ? '...' : separator.toString();
         return (text.substring(0, len) + codes);
     };
     Util.prototype.repeat = function (text, length) {
