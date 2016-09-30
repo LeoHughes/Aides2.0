@@ -113,8 +113,9 @@ var Util = (function () {
         if (reg_url) {
             if (reg_url.indexOf('&') !== -1) {
                 reg_arr = reg_url.substr(1).split('&');
-                for (var v in reg_arr) {
-                    var key = reg_arr[v].split('=')[0], value = reg_arr[v].split('=')[1];
+                for (var _i = 0, reg_arr_1 = reg_arr; _i < reg_arr_1.length; _i++) {
+                    var v = reg_arr_1[_i];
+                    var key = v.split('=')[0], value = v.split('=')[1];
                     url_obj[key] = value;
                 }
                 return url_obj;

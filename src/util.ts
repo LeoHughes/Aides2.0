@@ -231,9 +231,9 @@ class Util {
     if (reg_url) {
       if (reg_url.indexOf('&') !== -1) {
         reg_arr = reg_url.substr(1).split('&');
-        for (var v in reg_arr) {
-          var key = reg_arr[v].split('=')[0],
-            value = reg_arr[v].split('=')[1];
+        for (let v of reg_arr) {
+          let key = v.split('=')[0],
+            value = v.split('=')[1];
 
           url_obj[key] = value;
         }
