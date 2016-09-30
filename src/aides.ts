@@ -116,8 +116,8 @@ class Aides {
 
   private all = ()=>{
     const fucArr = this.methods(this);
-    for (let v in fucArr) {
-      this.log(`[${fucArr[v]}]`,'info');
+    for (let v of fucArr) {
+      this.log(`[${v}]`,'info');
     }
   }
 

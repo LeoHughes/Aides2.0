@@ -46,8 +46,8 @@ class Arr {
       val = parseInt(nArr[0]),
       length = nArr.length;
 
-    for (let v in nArr) {
-      if (parseInt(nArr[v]) < val) val = nArr[v];
+    for (let v of nArr) {
+      if (parseInt(v) < val) val = v;
     }
 
     return val;
@@ -62,8 +62,8 @@ class Arr {
       val = parseInt(nArr[0]),
       length = nArr.length;
 
-    for (let v in nArr) {
-      if (parseInt(nArr[v]) > val) val = nArr[v];
+    for (let v of nArr) {
+      if (parseInt(v) > val) val = v;
     }
 
     return val;
@@ -99,7 +99,6 @@ class Arr {
    * 
    */
   concat(...arr: any[]): any[] {
-    console.log([].concat(...arr));
     return this.unique([].concat(...arr));
   }
 

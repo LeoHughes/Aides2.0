@@ -22,17 +22,19 @@ var Arr = (function () {
     };
     Arr.prototype.getMin = function (arr) {
         var nArr = this.compact(arr), val = parseInt(nArr[0]), length = nArr.length;
-        for (var v in nArr) {
-            if (parseInt(nArr[v]) < val)
-                val = nArr[v];
+        for (var _i = 0, nArr_1 = nArr; _i < nArr_1.length; _i++) {
+            var v = nArr_1[_i];
+            if (parseInt(v) < val)
+                val = v;
         }
         return val;
     };
     Arr.prototype.getMax = function (arr) {
         var nArr = this.compact(arr), val = parseInt(nArr[0]), length = nArr.length;
-        for (var v in nArr) {
-            if (parseInt(nArr[v]) > val)
-                val = nArr[v];
+        for (var _i = 0, nArr_2 = nArr; _i < nArr_2.length; _i++) {
+            var v = nArr_2[_i];
+            if (parseInt(v) > val)
+                val = v;
         }
         return val;
     };
@@ -57,9 +59,8 @@ var Arr = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             arr[_i - 0] = arguments[_i];
         }
-        console.log((_a = []).concat.apply(_a, arr));
-        return this.unique((_b = []).concat.apply(_b, arr));
-        var _a, _b;
+        return this.unique((_a = []).concat.apply(_a, arr));
+        var _a;
     };
     Arr.prototype.toObj = function (list, values) {
         var nObj = {};

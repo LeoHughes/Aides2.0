@@ -58,8 +58,9 @@ var Aides = (function () {
         this.assign = obj.assign;
         this.all = function () {
             var fucArr = _this.methods(_this);
-            for (var v in fucArr) {
-                _this.log("[" + fucArr[v] + "]", 'info');
+            for (var _i = 0, fucArr_1 = fucArr; _i < fucArr_1.length; _i++) {
+                var v = fucArr_1[_i];
+                _this.log("[" + v + "]", 'info');
             }
         };
         this.extend = function (key, fn) {
