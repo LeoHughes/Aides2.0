@@ -260,7 +260,7 @@ class Util {
 
       if (endTime) {
 
-        let t = setInterval(function () {
+        let t = setInterval( () => {
           callback();
         }, time);
         
