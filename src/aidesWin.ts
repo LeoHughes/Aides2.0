@@ -38,6 +38,6 @@ class AidesWin extends Aides {
 
 (function (window) {
 
-  window._ = new AidesWin();
+  (<any>window)._ = new AidesWin();
 
 })(window);

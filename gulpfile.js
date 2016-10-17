@@ -11,8 +11,8 @@ var tsProject = ts.createProject("tsconfig.json");
  */
 gulp.task("ts", function () {
   return tsProject.src()
-    .pipe(ts(tsProject))
-    .js.pipe(gulp.dest("mod"));
+    .pipe(tsProject(tsProject))
+    .pipe(gulp.dest("mod"));
 });
 
 
