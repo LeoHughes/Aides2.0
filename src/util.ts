@@ -2,7 +2,7 @@ import { Reg } from './reg';
 import { Obj } from './obj';
 
 const _ = new Reg(),
-      o = new Obj();
+  o = new Obj();
 
 /**
  * util
@@ -37,19 +37,19 @@ class Util {
   /**
    * 获得字符串、数组的长度,获得对象的属性数量,数字小数点前的位数
    */
-  size(el:any):number{
+  size(el: any): number {
     let length;
 
     if (_.isString(el) || _.isArray(el)) {
-        length = el.length;
+      length = el.length;
     } else if (_.isObject(el)) {
-        length = o.keys(el).length;
+      length = o.keys(el).length;
     } else if (_.isNumber(el)) {
-        el = el.toString().split('.')[0];
-        length = el.length;
+      el = el.toString().split('.')[0];
+      length = el.length;
     }
 
-    return length;    
+    return length;
   }
 
 
@@ -260,11 +260,11 @@ class Util {
 
       if (endTime) {
 
-        let t = setInterval( () => {
+        let t = setInterval(() => {
           callback();
         }, time);
-        
-        setTimeout( () => {
+
+        setTimeout(() => {
           clearInterval(t);
           if (endCallback) endCallback();
         }, time + endTime);
