@@ -2,6 +2,7 @@ var date_reg = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8
 var email_reg = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)/;
 var IP_reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])((\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])){3}|(\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])){5})$/;
 var verifyAccount_reg = /^[a-zA-Z][a-zA-Z0-9_]{5,14}$/;
+var IDcard_reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
 var url_reg = /[a-zA-z]+:\/\/[^\s]/;
 var trim_reg = /(^\s*)|(\s*$)/g;
 var clearSpace_reg = /[ ]/g;
@@ -75,6 +76,9 @@ var Reg = (function () {
     };
     Reg.prototype.isVerifyAccount = function (account) {
         return this._testRE(verifyAccount_reg, account);
+    };
+    Reg.prototype.isIDcard = function (cardNo) {
+        return this._testRE(IDcard_reg, cardNo);
     };
     Reg.prototype.isUrl = function (url) {
         return this._testRE(url_reg, url);

@@ -14,6 +14,9 @@ const IP_reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])((\.(\d{1,2}|1\d\d|2[0-4]\d|25[
 /**账号或密码(字母开头，允许6-15字节，允许字母数字下划线) */
 const verifyAccount_reg = /^[a-zA-Z][a-zA-Z0-9_]{5,14}$/;
 
+/**身份证验证 */
+const IDcard_reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+
 /**网址url */
 const url_reg = /[a-zA-z]+:\/\/[^\s]/;
 
@@ -144,6 +147,10 @@ class Reg {
   /**验证账号或密码(字母开头，允许6-15字节，允许字母数字下划线) */
   isVerifyAccount(account: string): boolean {
     return this._testRE(verifyAccount_reg, account);
+  }
+
+  isIDcard(cardNo: number | string): boolean {
+    return this._testRE(IDcard_reg, cardNo);
   }
 
   /**验证url */

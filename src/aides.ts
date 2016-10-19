@@ -38,6 +38,8 @@ class Aides {
 
   private isVerifyAccount = reg.isVerifyAccount;
 
+  private isIDcard = reg.isIDcard;
+
   private isUrl = reg.isUrl;
 
   private existCN = reg.existCN;

@@ -18,6 +18,7 @@ var Aides = (function () {
         this.isEmail = reg.isEmail;
         this.isIP = reg.isIP;
         this.isVerifyAccount = reg.isVerifyAccount;
+        this.isIDcard = reg.isIDcard;
         this.isUrl = reg.isUrl;
         this.existCN = reg.existCN;
         this.trim = reg.trim;
