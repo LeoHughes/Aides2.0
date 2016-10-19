@@ -149,6 +149,7 @@ class Reg {
     return this._testRE(verifyAccount_reg, account);
   }
 
+  /**验证身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X */
   isIDcard(cardNo: number | string): boolean {
     return this._testRE(IDcard_reg, cardNo);
   }

@@ -146,6 +146,15 @@ _.isVerifyAccount(a); //false
 _.isVerifyAccount(b); //true
 ```
 
+>***isIDcard***
+>验证身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
+
+```js
+let a = 12345;
+
+_.isIDcard(a); //false
+```
+
 >***isUrl***
 >验证网址url
 
