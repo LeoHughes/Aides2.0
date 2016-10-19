@@ -264,7 +264,7 @@ class Util {
           callback();
         }, time);
         
-        setTimeout(function () {
+        setTimeout( () => {
           clearInterval(t);
           if (endCallback) endCallback();
         }, time + endTime);
