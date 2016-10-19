@@ -1,32 +1,18 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var reg_1 = require('./reg');
 var util_1 = require('./util');
 var arr_1 = require('./arr');
 var obj_1 = require('./obj');
-var reg = new reg_1.Reg(), util = new util_1.Util(), arr = new arr_1.Arr(), obj = new obj_1.Obj();
-var Aides = (function () {
+var util = new util_1.Util(), arr = new arr_1.Arr(), obj = new obj_1.Obj();
+var Aides = (function (_super) {
+    __extends(Aides, _super);
     function Aides() {
         var _this = this;
-        this.isNull = reg.isNull;
-        this.isArray = reg.isArray;
-        this.isFunction = reg.isFunction;
-        this.isObject = reg.isObject;
-        this.isString = reg.isString;
-        this.isNumber = reg.isNumber;
-        this.isBoolean = reg.isBoolean;
-        this.isEmpty = reg.isEmpty;
-        this.isDate = reg.isDate;
-        this.isEmail = reg.isEmail;
-        this.isIP = reg.isIP;
-        this.isVerifyAccount = reg.isVerifyAccount;
-        this.isIDcard = reg.isIDcard;
-        this.isUrl = reg.isUrl;
-        this.existCN = reg.existCN;
-        this.trim = reg.trim;
-        this.clearSpace = reg.clearSpace;
-        this.getNum = reg.getNum;
-        this.getCN = reg.getCN;
-        this.excludeHTML = reg.excludeHTML;
-        this.excludeStyle = reg.excludeStyle;
+        _super.call(this);
         this.log = util.log;
         this.size = util.size;
         this.trunc = util.trunc;
@@ -72,5 +58,5 @@ var Aides = (function () {
         };
     }
     return Aides;
-}());
+}(reg_1.Reg));
 exports.Aides = Aides;

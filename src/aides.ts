@@ -3,8 +3,7 @@ import { Util } from './util';
 import { Arr } from './arr';
 import { Obj } from './obj';
 
-const reg = new Reg(),
-  util = new Util(),
+const util = new Util(),
   arr = new Arr(),
   obj = new Obj();
 
@@ -12,49 +11,7 @@ const reg = new Reg(),
 /**
  * Aides
  */
-class Aides {
-
-  private isNull = reg.isNull;
-
-  private isArray = reg.isArray;
-
-  private isFunction = reg.isFunction;
-
-  private isObject = reg.isObject;
-
-  private isString = reg.isString;
-
-  private isNumber = reg.isNumber;
-
-  private isBoolean = reg.isBoolean;
-
-  private isEmpty = reg.isEmpty;
-
-  private isDate = reg.isDate;
-
-  private isEmail = reg.isEmail;
-
-  private isIP = reg.isIP;
-
-  private isVerifyAccount = reg.isVerifyAccount;
-
-  private isIDcard = reg.isIDcard;
-
-  private isUrl = reg.isUrl;
-
-  private existCN = reg.existCN;
-
-  private trim = reg.trim;
-
-  private clearSpace = reg.clearSpace;
-
-  private getNum = reg.getNum;
-
-  private getCN = reg.getCN;
-
-  private excludeHTML = reg.excludeHTML;
-
-  private excludeStyle = reg.excludeStyle;
+class Aides extends Reg {
 
   private log = util.log;
 
@@ -116,23 +73,23 @@ class Aides {
 
   private assign = obj.assign;
 
-  private all = ()=>{
+  private all = () => {
     const fucArr = this.methods(this);
     for (let v of fucArr) {
-      this.log(`[${v}]`,'info');
+      this.log(`[${v}]`, 'info');
     }
   }
 
-  private extend = (key:string, fn:string)=>{
+  private extend = (key: string, fn: string) => {
     const fucArr = this.methods(this);
 
-    if(fucArr.indexOf(key) === -1){
+    if (fucArr.indexOf(key) === -1) {
       this[key] = fn;
     }
   }
 
   constructor() {
-
+    super()
   }
 
 }
