@@ -80,7 +80,7 @@ class Aides extends Reg {
     }
   }
 
-  private extend = (key: string, fn: string) => {
+  private extend = (key: string, fn: any) => {
     const fucArr = this.methods(this);
 
     if (fucArr.indexOf(key) === -1) {
