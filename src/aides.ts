@@ -73,6 +73,7 @@ class Aides extends Reg {
 
   private assign = obj.assign;
 
+  /**输出工具包所有方法名称 */
   private all = () => {
     const fucArr = this.methods(this);
     for (let v of fucArr) {
@@ -80,6 +81,13 @@ class Aides extends Reg {
     }
   }
 
+  /**
+   * 工具包扩展(属性或方法)
+   * 
+   * key 扩展的键名称
+   * fn 扩展的值
+   * 
+   */
   private extend = (key: string, fn: any) => {
     const fucArr = this.methods(this);
 
