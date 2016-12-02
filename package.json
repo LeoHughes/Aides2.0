@@ -1,8 +1,8 @@
 {
-  "name": "aides2.0",
+  "name": "aides",
   "version": "1.0.0",
-  "description": "Aides2.0",
-  "main": "aides.js",
+  "description": "Javascript toolkits",
+  "main": "./mod/aides.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
