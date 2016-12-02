@@ -1,6 +1,6 @@
 {
   "name": "aides",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript toolkits",
   "main": "./mod/aides.js",
   "scripts": {
