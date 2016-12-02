@@ -17,7 +17,7 @@ gulp.task("ts", function () {
 
 
 /**
- * 统一打包编译Typescript
+ * 统一打包编译aidesWin js文件
  */
 gulp.task("webpack", function () {
 
