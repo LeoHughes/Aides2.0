@@ -9,13 +9,13 @@
   "author": "LeoHughes",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-typescript": "^3.0.2",
+    "gulp-typescript": "^3.1.3",
     "gulp-uglify": "^2.0.0",
-    "ts-loader": "^0.9.4",
-    "typescript": "^2.0.3",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {}
