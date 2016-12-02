@@ -1,6 +1,6 @@
 var reg_1 = require('./reg');
 var obj_1 = require('./obj');
-var _ = new reg_1.Reg(), o = new obj_1.Obj();
+var _ = new reg_1.default(), o = new obj_1.default();
 var Util = (function () {
     function Util() {
     }
@@ -144,4 +144,5 @@ var Util = (function () {
     };
     return Util;
 }());
-exports.Util = Util;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Util;

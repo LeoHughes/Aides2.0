@@ -49,7 +49,7 @@ const nbsp_reg = /&nbsp;/ig;
  * regObj
  * 
  */
-class Reg {
+export default class Reg {
 
   /**检测类型 */
   _testType(obj: any): any {
@@ -199,5 +199,3 @@ class Reg {
 
   }
 }
-
-export { Reg }

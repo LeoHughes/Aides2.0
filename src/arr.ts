@@ -1,4 +1,4 @@
-import { Reg } from './reg';
+import  Reg  from './reg';
 
 const _ = new Reg();
 
@@ -7,7 +7,7 @@ const _ = new Reg();
  */
 
 
-class Arr {
+export default class Arr {
 
   /**
    * 将 array 拆分成多个 size 长度的数组
@@ -126,5 +126,3 @@ class Arr {
   }
 
 }
-
-export { Arr }

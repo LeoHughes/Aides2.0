@@ -107,4 +107,5 @@ var Reg = (function () {
     };
     return Reg;
 }());
-exports.Reg = Reg;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Reg;

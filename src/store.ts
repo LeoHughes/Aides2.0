@@ -1,4 +1,4 @@
-import { Reg } from './reg';
+import  Reg  from './reg';
 
 const _ = new Reg();
 
@@ -13,7 +13,7 @@ if ((typeof Storage) !== 'undefined') {
  *  
  */
 
-class Store {
+export default class Store {
 
   /**
    * 根据name获取cookie值，若无则返回空
@@ -127,5 +127,3 @@ class Store {
   }
 
 }
-
-export { Store }

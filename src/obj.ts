@@ -1,11 +1,11 @@
-import { Reg } from './reg';
+import  Reg  from './reg';
 
 const _ = new Reg();
 
 /**
  * Object
  */
-class Obj {
+export default class Obj {
 
   /**
    * 如果对象包含给定的键，返回true。
@@ -114,5 +114,3 @@ class Obj {
   }
 
 }
-
-export { Obj }

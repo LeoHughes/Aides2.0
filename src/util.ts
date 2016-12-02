@@ -1,5 +1,5 @@
-import { Reg } from './reg';
-import { Obj } from './obj';
+import  Reg  from './reg';
+import  Obj  from './obj';
 
 const _ = new Reg(),
   o = new Obj();
@@ -8,7 +8,7 @@ const _ = new Reg(),
  * util
  */
 
-class Util {
+export default class Util {
 
   /**
    * 控制台输出
@@ -282,6 +282,3 @@ class Util {
   }
 
 }
-
-
-export { Util }

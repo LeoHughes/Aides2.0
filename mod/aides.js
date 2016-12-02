@@ -7,7 +7,7 @@ var reg_1 = require('./reg');
 var util_1 = require('./util');
 var arr_1 = require('./arr');
 var obj_1 = require('./obj');
-var util = new util_1.Util(), arr = new arr_1.Arr(), obj = new obj_1.Obj();
+var util = new util_1.default(), arr = new arr_1.default(), obj = new obj_1.default();
 var Aides = (function (_super) {
     __extends(Aides, _super);
     function Aides() {
@@ -58,5 +58,5 @@ var Aides = (function (_super) {
         };
     }
     return Aides;
-}(reg_1.Reg));
+}(reg_1.default));
 exports.Aides = Aides;

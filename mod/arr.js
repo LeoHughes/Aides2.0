@@ -1,5 +1,5 @@
 var reg_1 = require('./reg');
-var _ = new reg_1.Reg();
+var _ = new reg_1.default();
 var Arr = (function () {
     function Arr() {
     }
@@ -73,4 +73,5 @@ var Arr = (function () {
     };
     return Arr;
 }());
-exports.Arr = Arr;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Arr;

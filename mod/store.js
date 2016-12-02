@@ -1,5 +1,5 @@
 var reg_1 = require('./reg');
-var _ = new reg_1.Reg();
+var _ = new reg_1.default();
 var storage;
 if ((typeof Storage) !== 'undefined') {
     storage = window.localStorage;
@@ -65,4 +65,5 @@ var Store = (function () {
     };
     return Store;
 }());
-exports.Store = Store;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Store;
