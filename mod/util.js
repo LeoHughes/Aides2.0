@@ -1,5 +1,5 @@
-var reg_1 = require('./reg');
-var obj_1 = require('./obj');
+var reg_1 = require("./reg");
+var obj_1 = require("./obj");
 var _ = new reg_1.default(), o = new obj_1.default();
 var Util = (function () {
     function Util() {

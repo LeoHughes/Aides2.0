@@ -1,4 +1,4 @@
-var reg_1 = require('./reg');
+var reg_1 = require("./reg");
 var _ = new reg_1.default();
 var Arr = (function () {
     function Arr() {
@@ -59,8 +59,7 @@ var Arr = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             arr[_i - 0] = arguments[_i];
         }
-        return this.unique((_a = []).concat.apply(_a, arr));
-        var _a;
+        return this.unique([].concat.apply([], arr));
     };
     Arr.prototype.toObj = function (list, values) {
         var nObj = {};

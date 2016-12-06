@@ -1,4 +1,4 @@
-var reg_1 = require('./reg');
+var reg_1 = require("./reg");
 var _ = new reg_1.default();
 var storage;
 if ((typeof Storage) !== 'undefined') {
