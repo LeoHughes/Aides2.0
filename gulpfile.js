@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var webpack = require('webpack-stream');
 var babel = require("gulp-babel");
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
 
@@ -27,7 +28,7 @@ gulp.task("webpack", function () {
       extensions: ['', '.ts']
     },
     output: {
-      filename: 'aidesWin.min.js'
+      filename: 'aidesWin.js'
     },
     module: {
       loaders: [
@@ -41,11 +42,15 @@ gulp.task("webpack", function () {
 
 //编译为es5
 gulp.task("es5", ["webpack"], function () {
-  return gulp.src(["./dist/aidesWin.min.js"])
+  return gulp.src(["./dist/aidesWin.js"])
     .pipe(babel({
       presets: ["es2015"]
     }))
-     .pipe(
+    .pipe(gulp.dest('dist'))
+    .pipe(
+      rename('aidesWin.min.js')
+    )
+    .pipe(
         uglify()
      )             
     .pipe(gulp.dest("dist"));
