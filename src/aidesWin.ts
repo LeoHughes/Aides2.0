@@ -1,6 +1,6 @@
-import { Aides } from './aides';
+import  Aides from './aides';
 import  Util  from './util';
-import  Store  from './store';
+import  Store from './store';
 
 const util = new Util(),
       store = new Store();

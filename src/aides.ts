@@ -11,7 +11,7 @@ const util = new Util(),
 /**
  * Aides
  */
-class Aides extends Reg {
+export default class Aides extends Reg {
 
   private log = util.log;
 
@@ -101,6 +101,4 @@ class Aides extends Reg {
   }
 
 }
-
-export { Aides }
 
