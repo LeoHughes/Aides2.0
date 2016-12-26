@@ -59,4 +59,5 @@ var Aides = (function (_super) {
     }
     return Aides;
 }(reg_1.default));
-exports.Aides = Aides;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Aides;

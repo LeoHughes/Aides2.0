@@ -78,7 +78,7 @@
 			return _this;
 		}
 		return AidesWin;
-	}(aides_1.Aides);
+	}(aides_1.default);
 	(function (window) {
 		window._ = new AidesWin();
 	})(window);
@@ -154,7 +154,8 @@
 		}
 		return Aides;
 	}(reg_1.default);
-	exports.Aides = Aides;
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = Aides;
 
 	/***/
 },
