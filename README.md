@@ -68,11 +68,9 @@ util模块，一些杂项的辅助方法
 
 ### 使用
 
-**npm**:
+**npm**：npm install aides2.0
 
-```npm command
-$ npm install aides2.0
-
+```js
 const Aides = require('aides2.0');
 
 const _ = new Aides.Aides();
