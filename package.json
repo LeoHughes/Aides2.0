@@ -2,6 +2,17 @@
   "name": "aides",
   "version": "1.0.1",
   "description": "Javascript toolkits",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeoHughes/Aides2.0.git"
+  },
+  "keywords": [
+    "aides",
+    "Aides",
+    "Aides2.0",
+    "javascript",
+    "toolkits"
+  ],
   "main": "./mod/aides.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

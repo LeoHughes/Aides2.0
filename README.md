@@ -66,7 +66,18 @@ store模块，主要是操作浏览器端cookie和localStorage的辅助方法，
 util模块，一些杂项的辅助方法
 ```
 
-### 引入
+### 使用
+
+**npm**:
+
+```js
+npm install aides2.0
+
+const Aides = require('aides2.0');
+
+const _ = new Aides.Aides();
+```
+
 
 **浏览器端**：直接引入dist文件夹下的aidesWin.js
 ```js
@@ -85,7 +96,7 @@ const _ = new Aides.Aides();
 console.log(_.size('abcd')); //4
 ```
 
-或者单独引入某个模块
+或者单独引入某个模块[**不推荐**]
 
 ```js
 const Util = require('./mod/util');
