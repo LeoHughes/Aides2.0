@@ -70,8 +70,8 @@ util模块，一些杂项的辅助方法
 
 **npm**:
 
-```js
-npm install aides2.0
+```npm command
+$ npm install aides2.0
 
 const Aides = require('aides2.0');
 
