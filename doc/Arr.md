@@ -4,7 +4,7 @@
 
 ```js
 const Arr = require('./mode/arr');
-const _ = new Arr.Arr();
+const _ = new Arr.default();
 ```
 
 ***

@@ -4,7 +4,7 @@
 
 ```js
 const Util = require('./mode/util');
-const _ = new Util.Util();
+const _ = new Util.default();
 ```
 
 ***

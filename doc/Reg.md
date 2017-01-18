@@ -4,7 +4,7 @@
 
 ```js
 const Reg = require('./mode/reg');
-const _ = new Reg.Reg();
+const _ = new Reg.default();
 ```
 
 ***

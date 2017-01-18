@@ -4,7 +4,7 @@
 
 ```js
 const Obj = require('./mode/obj');
-const _ = new Obj.Obj();
+const _ = new Obj.default();
 ```
 
 ***

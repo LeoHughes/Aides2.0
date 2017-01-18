@@ -73,7 +73,7 @@ util模块，一些杂项的辅助方法
 ```js
 const Aides = require('aides2.0');
 
-const _ = new Aides.Aides();
+const _ = new Aides.default();
 ```
 
 
@@ -89,7 +89,7 @@ const _ = new Aides.Aides();
 ```js
 const Aides = require('./mod/aides');
 
-const _ = new Aides.Aides();
+const _ = new Aides.default();
 
 console.log(_.size('abcd')); //4
 ```
@@ -99,7 +99,7 @@ console.log(_.size('abcd')); //4
 ```js
 const Util = require('./mod/util');
 
-const _ = new Util.Util();
+const _ = new Util.default();
 
 console.log(_.exNum('123')); //一二三
 ```
