@@ -45,7 +45,7 @@ export default class Store {
    **/
   setCookie(name: string, value: string, time: number): void {
     let d = new Date(),
-      expires;
+        expires;
 
     d.setTime(d.getTime() + (time * 1000));
     expires = "expires=" + d.toUTCString();

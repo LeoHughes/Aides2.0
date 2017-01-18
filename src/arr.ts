@@ -1,4 +1,4 @@
-import  Reg  from './reg';
+import Reg from './reg';
 
 const _ = new Reg();
 
@@ -15,7 +15,7 @@ export default class Arr {
    */
   chunk(arr: any[], size: number): any[] {
     let outArr = [],
-      length = arr.length;
+        length = arr.length;
 
     for (let i = 0; i < length; i += size) {
       let inArr = arr.slice(i, i + size);
@@ -31,9 +31,11 @@ export default class Arr {
    */
   compact(arr: any[]): any[] {
     let outArr = [];
+
     for (let v of arr) {
       if (v) outArr.push(v);
     }
+
     return outArr;
   }
 
@@ -42,9 +44,9 @@ export default class Arr {
    * 
    */
   getMin(arr: any[]): any {
-    let nArr = this.compact(arr),
-      val = parseInt(nArr[0]),
-      length = nArr.length;
+    let nArr   =  this.compact(arr),
+        val    =  parseInt(nArr[0]),
+        length =  nArr.length;
 
     for (let v of nArr) {
       if (parseInt(v) < val) val = v;
@@ -58,9 +60,9 @@ export default class Arr {
    * 
    */
   getMax(arr: any[]): any {
-    let nArr = this.compact(arr),
-      val = parseInt(nArr[0]),
-      length = nArr.length;
+    let nArr   =  this.compact(arr),
+        val    =  parseInt(nArr[0]),
+        length =  nArr.length;
 
     for (let v of nArr) {
       if (parseInt(v) > val) val = v;
@@ -74,11 +76,12 @@ export default class Arr {
    * 
    */
   unique(arr: any[]): any[] {
-    let uq = {},
-      outArr = [],
-      prefix = '';
+    let uq      =  {},
+        outArr  =  [],
+        prefix  =  '';
 
     for (let v in arr) {
+
       if (_.isString(arr[v])) {
         prefix = '_str';
       } else {
@@ -89,6 +92,7 @@ export default class Arr {
         uq[arr[v] + prefix] = true;
         outArr.push(arr[v]);
       }
+
     }
 
     return outArr;
@@ -114,6 +118,7 @@ export default class Arr {
 
     for (var v in list) {
       if (!values[v]) nObj[list[v]] = null;
+      
       nObj[list[v]] = values[v];
     }
 

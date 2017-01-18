@@ -1,11 +1,11 @@
 import  Reg  from './reg';
-import  Util  from './util';
+import  Util from './util';
 import  Arr  from './arr';
 import  Obj  from './obj';
 
 const util = new Util(),
-  arr = new Arr(),
-  obj = new Obj();
+      arr  = new Arr(),
+      obj  = new Obj();
 
 
 /**
