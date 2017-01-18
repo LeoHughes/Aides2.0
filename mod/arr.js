@@ -57,7 +57,7 @@ var Arr = (function () {
     Arr.prototype.concat = function () {
         var arr = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            arr[_i - 0] = arguments[_i];
+            arr[_i] = arguments[_i];
         }
         return this.unique([].concat.apply([], arr));
     };
