@@ -111,7 +111,9 @@ export default class Arr {
       output[JSON.stringify(v)] = 'z';
     })
 
-    return o.keys(output);
+    return o.keys(output).map((v,i)=>{
+      return JSON.parse(v);
+    });
 
   }
 

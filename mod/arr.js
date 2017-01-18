@@ -60,7 +60,9 @@ var Arr = (function () {
         arr.map(function (v, i) {
             output[JSON.stringify(v)] = 'z';
         });
-        return o.keys(output);
+        return o.keys(output).map(function (v, i) {
+            return JSON.parse(v);
+        });
     };
     Arr.prototype.concat = function () {
         var arr = [];
