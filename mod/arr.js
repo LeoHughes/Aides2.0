@@ -54,6 +54,14 @@ var Arr = (function () {
         }
         return outArr;
     };
+    Arr.prototype.colUnique = function (arr) {
+        var outArr = [];
+        for (var i = 0; i < arr.length; i += 2) {
+            if (arr[i] !== arr[i + 1])
+                outArr.push(arr[i]);
+        }
+        return outArr;
+    };
     Arr.prototype.concat = function () {
         var arr = [];
         for (var _i = 0; _i < arguments.length; _i++) {

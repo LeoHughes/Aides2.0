@@ -55,6 +55,8 @@ export default class Aides extends Reg {
 
   private unique = arr.unique;
 
+  private colUnique = arr.colUnique;
+
   private concat = arr.concat;
 
   private toObj = arr.toObj;

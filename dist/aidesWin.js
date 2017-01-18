@@ -128,6 +128,7 @@
 			_this.getMin = arr.getMin;
 			_this.getMax = arr.getMax;
 			_this.unique = arr.unique;
+			_this.colUnique = arr.colUnique;
 			_this.concat = arr.concat;
 			_this.toObj = arr.toObj;
 			_this.has = obj.has;
@@ -588,6 +589,13 @@
 					uq[arr[v] + prefix] = true;
 					outArr.push(arr[v]);
 				}
+			}
+			return outArr;
+		};
+		Arr.prototype.colUnique = function (arr) {
+			var outArr = [];
+			for (var i = 0; i < arr.length; i += 2) {
+				if (arr[i] !== arr[i + 1]) outArr.push(arr[i]);
 			}
 			return outArr;
 		};

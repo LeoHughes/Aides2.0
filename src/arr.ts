@@ -99,6 +99,20 @@ export default class Arr {
   }
 
   /**
+   * 数组去除重复对象
+   * 
+   */
+  colUnique(arr: any[]): any[] {
+    let outArr = [];
+
+    for (let i = 0; i < arr.length; i+=2) {
+      if(arr[i] !== arr[i+1]) outArr.push(arr[i]);
+    }
+
+    return outArr;
+  }
+
+  /**
    * 数组合并去重 [字符串数字和数字视为不同处理]
    * 
    */
