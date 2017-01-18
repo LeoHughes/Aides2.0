@@ -1,6 +1,8 @@
 import Reg from './reg';
+import Obj from './obj';
 
-const _ = new Reg();
+const _ = new Reg(),
+      o = new Obj();
 
 /**
  * Array
@@ -103,13 +105,14 @@ export default class Arr {
    * 
    */
   colUnique(arr: any[]): any[] {
-    let outArr = [];
+    let output = {};
 
-    for (let i = 0; i < arr.length; i+=2) {
-      if(arr[i] !== arr[i+1]) outArr.push(arr[i]);
-    }
+    arr.map((v,i)=>{
+      output[JSON.stringify(v)] = 'z';
+    })
 
-    return outArr;
+    return o.keys(output);
+
   }
 
   /**

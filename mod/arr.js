@@ -1,5 +1,6 @@
 var reg_1 = require("./reg");
-var _ = new reg_1.default();
+var obj_1 = require("./obj");
+var _ = new reg_1.default(), o = new obj_1.default();
 var Arr = (function () {
     function Arr() {
     }
@@ -55,12 +56,11 @@ var Arr = (function () {
         return outArr;
     };
     Arr.prototype.colUnique = function (arr) {
-        var outArr = [];
-        for (var i = 0; i < arr.length; i += 2) {
-            if (arr[i] !== arr[i + 1])
-                outArr.push(arr[i]);
-        }
-        return outArr;
+        var output = {};
+        arr.map(function (v, i) {
+            output[JSON.stringify(v)] = 'z';
+        });
+        return o.keys(output);
     };
     Arr.prototype.concat = function () {
         var arr = [];

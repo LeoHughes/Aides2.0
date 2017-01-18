@@ -535,7 +535,9 @@
 /***/function (module, exports, __webpack_require__) {
 
 	var reg_1 = __webpack_require__(2);
-	var _ = new reg_1.default();
+	var obj_1 = __webpack_require__(4);
+	var _ = new reg_1.default(),
+	    o = new obj_1.default();
 	var Arr = function () {
 		function Arr() {}
 		Arr.prototype.chunk = function (arr, size) {
@@ -593,11 +595,11 @@
 			return outArr;
 		};
 		Arr.prototype.colUnique = function (arr) {
-			var outArr = [];
-			for (var i = 0; i < arr.length; i += 2) {
-				if (arr[i] !== arr[i + 1]) outArr.push(arr[i]);
-			}
-			return outArr;
+			var output = {};
+			arr.map(function (v, i) {
+				output[JSON.stringify(v)] = 'z';
+			});
+			return o.keys(output);
 		};
 		Arr.prototype.concat = function () {
 			var arr = [];
