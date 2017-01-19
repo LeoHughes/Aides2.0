@@ -47,7 +47,7 @@ var Aides = (function (_super) {
             var fucArr = _this.methods(_this);
             for (var _i = 0, fucArr_1 = fucArr; _i < fucArr_1.length; _i++) {
                 var v = fucArr_1[_i];
-                _this.log("[" + v + "]", 'info');
+                _this.log("[" + v + "]");
             }
         };
         _this.extend = function (key, fn) {

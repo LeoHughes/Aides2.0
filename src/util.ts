@@ -13,25 +13,14 @@ export default class Util {
   /**
    * 控制台输出
    */
-  log(text: string, type: string): void {
-    if (type) {
-      switch (type) {
-        case 'warn':
-          console.warn(text);
-          break;
-        case 'log':
-          console.log(text);
-          break;
-        case 'info':
-          console.info(text);
-          break;
-        case 'error':
-          console.error(text);
-          break;
-      }
-    } else {
-      console.log(text);
+  log(obj: any): void {
+
+    if(_.isObject(obj) || _.isArray(obj)){
+      console.log(JSON.stringify(obj,null,2));
+    }else{
+      console.log(obj);
     }
+
   }
 
   /**

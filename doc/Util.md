@@ -14,7 +14,6 @@ const _ = new Util.default();
 
 ```js
 _.log('hello');
-_.log('hello','warn');
 ```
 
 >***size***

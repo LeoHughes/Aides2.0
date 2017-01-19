@@ -79,7 +79,7 @@ export default class Aides extends Reg {
   private all = () => {
     const fucArr = this.methods(this);
     for (let v of fucArr) {
-      this.log(`[${v}]`, 'info');
+      this.log(`[${v}]`);
     }
   }
 

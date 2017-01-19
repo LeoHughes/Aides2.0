@@ -4,25 +4,12 @@ var _ = new reg_1.default(), o = new obj_1.default();
 var Util = (function () {
     function Util() {
     }
-    Util.prototype.log = function (text, type) {
-        if (type) {
-            switch (type) {
-                case 'warn':
-                    console.warn(text);
-                    break;
-                case 'log':
-                    console.log(text);
-                    break;
-                case 'info':
-                    console.info(text);
-                    break;
-                case 'error':
-                    console.error(text);
-                    break;
-            }
+    Util.prototype.log = function (obj) {
+        if (_.isObject(obj) || _.isArray(obj)) {
+            console.log(JSON.stringify(obj, null, 2));
         }
         else {
-            console.log(text);
+            console.log(obj);
         }
     };
     Util.prototype.size = function (el) {
