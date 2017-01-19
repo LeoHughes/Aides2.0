@@ -56,7 +56,7 @@ export default class Obj {
   }
 
   /**
-   * 返回一个对象里所有的方法名, 已经排序的数组。
+   * 返回一个对象里所有的方法名。
    * 
    */
   methods(obj: any): any[] {

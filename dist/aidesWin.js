@@ -107,7 +107,6 @@
 		__extends(Aides, _super);
 		function Aides() {
 			var _this = _super.call(this) || this;
-			_this.log = util.log;
 			_this.size = util.size;
 			_this.trunc = util.trunc;
 			_this.repeat = util.repeat;
@@ -138,13 +137,6 @@
 			_this.objCompact = obj.objCompact;
 			_this.pickKeys = obj.pickKeys;
 			_this.assign = obj.assign;
-			_this.all = function () {
-				var fucArr = _this.methods(_this);
-				for (var _i = 0, fucArr_1 = fucArr; _i < fucArr_1.length; _i++) {
-					var v = fucArr_1[_i];
-					_this.log("[" + v + "]");
-				}
-			};
 			_this.extend = function (key, fn) {
 				var fucArr = _this.methods(_this);
 				if (fucArr.indexOf(key) === -1) {
@@ -285,7 +277,7 @@
 	    o = new obj_1.default();
 	var Util = function () {
 		function Util() {}
-		Util.prototype.log = function (obj) {
+		Util.prototype.log = function (obj, type) {
 			if (_.isObject(obj) || _.isArray(obj)) {
 				console.log(JSON.stringify(obj, null, 2));
 			} else {

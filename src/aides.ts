@@ -13,8 +13,6 @@ const util = new Util(),
  */
 export default class Aides extends Reg {
 
-  private log = util.log;
-
   private size = util.size;
 
   private trunc = util.trunc;
@@ -74,14 +72,6 @@ export default class Aides extends Reg {
   private pickKeys = obj.pickKeys;
 
   private assign = obj.assign;
-
-  /**输出工具包所有方法名称 */
-  private all = () => {
-    const fucArr = this.methods(this);
-    for (let v of fucArr) {
-      this.log(`[${v}]`);
-    }
-  }
 
   /**
    * 工具包扩展(属性或方法)

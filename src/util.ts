@@ -13,7 +13,7 @@ export default class Util {
   /**
    * 控制台输出
    */
-  log(obj: any): void {
+  log(obj: any, type?: string): void {
 
     if(_.isObject(obj) || _.isArray(obj)){
       console.log(JSON.stringify(obj,null,2));

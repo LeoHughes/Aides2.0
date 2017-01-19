@@ -4,7 +4,7 @@ var _ = new reg_1.default(), o = new obj_1.default();
 var Util = (function () {
     function Util() {
     }
-    Util.prototype.log = function (obj) {
+    Util.prototype.log = function (obj, type) {
         if (_.isObject(obj) || _.isArray(obj)) {
             console.log(JSON.stringify(obj, null, 2));
         }
