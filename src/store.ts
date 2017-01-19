@@ -20,6 +20,7 @@ export default class Store {
    */
   getCookie(name: string): string {
     const cname = `${name}=`;
+    
     let cookieVal = '';
 
     if (document.cookie) {

@@ -46,9 +46,9 @@ export default class Arr {
    * 
    */
   getMin(arr: any[]): any {
-    let nArr   =  this.compact(arr),
-        val    =  parseInt(nArr[0]),
-        length =  nArr.length;
+    let nArr   = this.compact(arr),
+        val    = parseInt(nArr[0]),
+        length = nArr.length;
 
     for (let v of nArr) {
       if (parseInt(v) < val) val = v;
@@ -62,9 +62,9 @@ export default class Arr {
    * 
    */
   getMax(arr: any[]): any {
-    let nArr   =  this.compact(arr),
-        val    =  parseInt(nArr[0]),
-        length =  nArr.length;
+    let nArr   = this.compact(arr),
+        val    = parseInt(nArr[0]),
+        length = nArr.length;
 
     for (let v of nArr) {
       if (parseInt(v) > val) val = v;
@@ -78,9 +78,9 @@ export default class Arr {
    * 
    */
   unique(arr: any[]): any[] {
-    let uq      =  {},
-        outArr  =  [],
-        prefix  =  '';
+    let uq     = {},
+        outArr = [],
+        prefix = '';
 
     for (let v in arr) {
 
@@ -107,11 +107,11 @@ export default class Arr {
   colUnique(arr: any[]): any[] {
     let output = {};
 
-    arr.map((v,i)=>{
+    arr.map((v)=>{
       output[JSON.stringify(v)] = 'z';
     })
 
-    return o.keys(output).map((v,i)=>{
+    return o.keys(output).map((v)=>{
       return JSON.parse(v);
     });
 

@@ -277,13 +277,6 @@
 	    o = new obj_1.default();
 	var Util = function () {
 		function Util() {}
-		Util.prototype.log = function (obj, type) {
-			if (_.isObject(obj) || _.isArray(obj)) {
-				console.log(JSON.stringify(obj, null, 2));
-			} else {
-				console.log(obj);
-			}
-		};
 		Util.prototype.size = function (el) {
 			var length;
 			if (_.isString(el) || _.isArray(el)) {
@@ -575,10 +568,10 @@
 		};
 		Arr.prototype.colUnique = function (arr) {
 			var output = {};
-			arr.map(function (v, i) {
+			arr.map(function (v) {
 				output[JSON.stringify(v)] = 'z';
 			});
-			return o.keys(output).map(function (v, i) {
+			return o.keys(output).map(function (v) {
 				return JSON.parse(v);
 			});
 		};

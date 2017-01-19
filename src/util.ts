@@ -11,19 +11,6 @@ const _ = new Reg(),
 export default class Util {
 
   /**
-   * 控制台输出
-   */
-  log(obj: any, type?: string): void {
-
-    if(_.isObject(obj) || _.isArray(obj)){
-      console.log(JSON.stringify(obj,null,2));
-    }else{
-      console.log(obj);
-    }
-
-  }
-
-  /**
    * 获得字符串、数组的长度,获得对象的属性数量,数字小数点前的位数
    */
   size(el: any): number {
@@ -121,12 +108,12 @@ export default class Util {
    */
   getDateArr(): Array<string> {
     let time = new Date(),
-      year = time.getFullYear(),
-      m = time.getMonth() + 1,
-      month = m < 10 ? ('0' + m) : m,
-      d = time.getDate(),
-      day = d < 10 ? ('0' + d) : d,
-      outArr = [];
+        year = time.getFullYear(),
+        m = time.getMonth() + 1,
+        month = m < 10 ? ('0' + m) : m,
+        d = time.getDate(),
+        day = d < 10 ? ('0' + d) : d,
+        outArr = [];
 
     outArr.push(year.toString());
     outArr.push(month.toString());
@@ -141,12 +128,12 @@ export default class Util {
    */
   getTimesArr(): Array<string> {
     var time = new Date(),
-      hours = time.getHours(),
-      m = time.getMinutes(),
-      minutes = m < 10 ? ('0' + m) : m,
-      s = time.getSeconds(),
-      seconds = s < 10 ? ('0' + s) : s,
-      outArr = [];
+        hours = time.getHours(),
+        m = time.getMinutes(),
+        minutes = m < 10 ? ('0' + m) : m,
+        s = time.getSeconds(),
+        seconds = s < 10 ? ('0' + s) : s,
+        outArr = [];
 
     outArr.push(hours.toString());
     outArr.push(minutes.toString());
@@ -160,10 +147,10 @@ export default class Util {
    */
   exNum(charNum: number | string): string {
     var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
-      num = charNum.toString(),
-      numArr = num.split(''),
-      len = numArr.length,
-      result = '';
+        num = charNum.toString(),
+        numArr = num.split(''),
+        len = numArr.length,
+        result = '';
 
     for (var i = 0; i < len; i++) {
       result += charArr[parseInt(numArr[i])];
@@ -214,19 +201,24 @@ export default class Util {
    */
   getUrlParam(): any {
     const reg_url = window.location.search;
+
     let reg_arr = [],
-      url_obj = {};
+        url_obj = {};
 
     if (reg_url) {
       if (reg_url.indexOf('&') !== -1) {
+
         reg_arr = reg_url.substr(1).split('&');
+
         for (let v of reg_arr) {
-          let key = v.split('=')[0],
-            value = v.split('=')[1];
+          let key   = v.split('=')[0],
+              value = v.split('=')[1];
 
           url_obj[key] = value;
         }
+
         return url_obj;
+
       } else {
         return reg_url.substr(1);
       }
@@ -255,6 +247,7 @@ export default class Util {
 
         setTimeout(() => {
           clearInterval(t);
+          
           if (endCallback) endCallback();
         }, time + endTime);
 

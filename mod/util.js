@@ -4,14 +4,6 @@ var _ = new reg_1.default(), o = new obj_1.default();
 var Util = (function () {
     function Util() {
     }
-    Util.prototype.log = function (obj, type) {
-        if (_.isObject(obj) || _.isArray(obj)) {
-            console.log(JSON.stringify(obj, null, 2));
-        }
-        else {
-            console.log(obj);
-        }
-    };
     Util.prototype.size = function (el) {
         var length;
         if (_.isString(el) || _.isArray(el)) {

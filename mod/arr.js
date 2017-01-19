@@ -57,10 +57,10 @@ var Arr = (function () {
     };
     Arr.prototype.colUnique = function (arr) {
         var output = {};
-        arr.map(function (v, i) {
+        arr.map(function (v) {
             output[JSON.stringify(v)] = 'z';
         });
-        return o.keys(output).map(function (v, i) {
+        return o.keys(output).map(function (v) {
             return JSON.parse(v);
         });
     };
