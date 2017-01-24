@@ -15,7 +15,7 @@ export default class Obj {
     let flag = false;
 
     if (_.isObject(obj)) {
-      for (var v in obj) {
+      for (let v in obj) {
         if (v === key) flag = true;
       }
     }
@@ -47,7 +47,7 @@ export default class Obj {
     let oArr = [];
 
     if (_.isObject(obj)) {
-      for (var v in obj) {
+      for (let v in obj) {
         if (this.has(obj, v)) oArr.push(obj[v]);
       }
     }
@@ -76,7 +76,7 @@ export default class Obj {
   objCompact(obj: any): any {
     let newObj = {};
 
-    for (var v in obj) {
+    for (let v in obj) {
       if (obj[v]) {
         newObj[v] = obj[v];
       }
@@ -92,7 +92,7 @@ export default class Obj {
   pickKeys(obj: any, keys: string[]): any {
     let newObj = {};
 
-    for (var v in keys) {
+    for (let v in keys) {
       if (obj.hasOwnProperty(keys[v])) {
         newObj[keys[v]] = obj[keys[v]];
       }
