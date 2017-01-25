@@ -135,7 +135,7 @@ export default class Arr {
   toObj(list: any[], values: any[]): any {
     let nObj = {};
 
-    for (var v in list) {
+    for (let v in list) {
       if (!values[v]) nObj[list[v]] = null;
       
       nObj[list[v]] = values[v];

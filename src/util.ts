@@ -2,7 +2,7 @@ import  Reg  from './reg';
 import  Obj  from './obj';
 
 const _ = new Reg(),
-  o = new Obj();
+      o = new Obj();
 
 /**
  * util
@@ -152,7 +152,7 @@ export default class Util {
         len = numArr.length,
         result = '';
 
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
       result += charArr[parseInt(numArr[i])];
     }
 
