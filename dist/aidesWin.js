@@ -311,7 +311,7 @@
 		};
 		Util.prototype.getCNDate = function () {
 			var dateArr = this.getDateArr();
-			return dateArr[0] + "\u5E74" + dateArr[1] + "\u6708" + dateArr[2] + "\u65E5";
+			return dateArr[0] + "年" + dateArr[1] + "月" + dateArr[2] + "日";
 		};
 		Util.prototype.getTimes = function (sepr) {
 			if (sepr === void 0) {
@@ -322,7 +322,7 @@
 		};
 		Util.prototype.getCNTimes = function () {
 			var dateArr = this.getTimesArr();
-			return dateArr[0] + "\u65F6" + dateArr[1] + "\u5206" + dateArr[2] + "\u79D2";
+			return dateArr[0] + "时" + dateArr[1] + "分" + dateArr[2] + "秒";
 		};
 		Util.prototype.getDateArr = function () {
 			var time = new Date(),

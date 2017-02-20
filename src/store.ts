@@ -84,7 +84,7 @@ export default class Store {
    */
   setStoreObj(obj: any): void {
     if (_.isObject(obj)) {
-      for (var v in obj) {
+      for (let v in obj) {
         this.setStoreItem(v, obj[v]);
       }
     }
@@ -95,11 +95,11 @@ export default class Store {
    */
   getStoreObj(): any {
     let len = storage.length,
-      obj = {};
+        obj = {};
 
-    for (var i = 0; i < len; i++) {
-      var key = storage.key(i),
-        val = this.getStoreItem(key);
+    for (let i = 0; i < len; i++) {
+      let key = storage.key(i),
+          val = this.getStoreItem(key);
 
       obj[key] = val;
     }
