@@ -127,7 +127,7 @@ export default class Util {
    *
    */
   getTimesArr(): Array<string> {
-    var time = new Date(),
+    let time = new Date(),
         hours = time.getHours(),
         m = time.getMinutes(),
         minutes = m < 10 ? ('0' + m) : m,
@@ -146,7 +146,7 @@ export default class Util {
    * 将阿拉伯数字转为汉字数字
    */
   exNum(charNum: number | string): string {
-    var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
+    let charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
         num = charNum.toString(),
         numArr = num.split(''),
         len = numArr.length,

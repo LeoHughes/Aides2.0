@@ -1,12 +1,11 @@
-import  Reg  from './reg';
-import  Util from './util';
-import  Arr  from './arr';
-import  Obj  from './obj';
+import Reg from './reg';
+import Util from './util';
+import Arr from './arr';
+import Obj from './obj';
 
 const util = new Util(),
-      arr  = new Arr(),
-      obj  = new Obj();
-
+  arr = new Arr(),
+  obj = new Obj();
 
 /**
  * Aides
@@ -75,12 +74,12 @@ export default class Aides extends Reg {
 
   /**
    * 工具包扩展(属性或方法)
-   * 
+   *
    * key 扩展的键名称
    * fn 扩展的值
-   * 
+   *
    */
-  private extend = (key: string, fn: any) => {
+  private extend = (key : string, fn : any) => {
     const fucArr = this.methods(this);
 
     if (fucArr.indexOf(key) === -1) {
@@ -93,4 +92,3 @@ export default class Aides extends Reg {
   }
 
 }
-
