@@ -1,3 +1,4 @@
+Object.defineProperty(exports, "__esModule", { value: true });
 var reg_1 = require("./reg");
 var _ = new reg_1.default();
 var Obj = (function () {
@@ -76,5 +77,4 @@ var Obj = (function () {
     };
     return Obj;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Obj;

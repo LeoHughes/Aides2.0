@@ -1,3 +1,4 @@
+Object.defineProperty(exports, "__esModule", { value: true });
 var reg_1 = require("./reg");
 var _ = new reg_1.default();
 var storage;
@@ -65,5 +66,4 @@ var Store = (function () {
     };
     return Store;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Store;
