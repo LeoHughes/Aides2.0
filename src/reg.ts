@@ -105,9 +105,7 @@ export default class Reg {
 
     if (this.isArray(obj) || this.isNumber(obj) || this.isString(obj)) {
       flag = obj.length === 0 ? true : false;
-    }
-
-    if (this.isObject(obj)) {
+    }else{
       for (let p in obj) {
         if (obj.hasOwnProperty(p)) {
           flag = false;

@@ -223,8 +223,7 @@
 			var flag = true;
 			if (this.isArray(obj) || this.isNumber(obj) || this.isString(obj)) {
 				flag = obj.length === 0 ? true : false;
-			}
-			if (this.isObject(obj)) {
+			} else {
 				for (var p in obj) {
 					if (obj.hasOwnProperty(p)) {
 						flag = false;
