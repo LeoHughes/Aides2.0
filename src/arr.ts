@@ -48,7 +48,7 @@ export default class Arr {
   getMin(arr: any[]): any {
     let nArr = this.compact(arr);
 
-    return Math.min.apply(nArr, nArr);
+    return Math.min(...nArr);
   }
 
   /**
@@ -58,7 +58,7 @@ export default class Arr {
   getMax(arr: any[]): any {
     let nArr = this.compact(arr);
 
-    return Math.max.apply(nArr, nArr);
+    return Math.max(...nArr);
   }
 
   /**

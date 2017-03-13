@@ -549,11 +549,11 @@
 		};
 		Arr.prototype.getMin = function (arr) {
 			var nArr = this.compact(arr);
-			return Math.min.apply(nArr, nArr);
+			return Math.min.apply(Math, nArr);
 		};
 		Arr.prototype.getMax = function (arr) {
 			var nArr = this.compact(arr);
-			return Math.max.apply(nArr, nArr);
+			return Math.max.apply(Math, nArr);
 		};
 		Arr.prototype.unique = function (arr) {
 			var uq = {},
