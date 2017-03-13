@@ -54,6 +54,18 @@ let a = [null,1,undefined,2,'',3,'1',2,'3'];
 _.unique(a); //[null,1,undefined,2,'',3,'1','3' ]
 ```
 
+>***colUnique***
+>数组去除重复对象
+```js
+let a = [
+    {'name':'Leo','age':26},
+    {'name':'Leo','age':26},
+    {'name':'Hughes','age':25}
+];
+
+_.colUnique(a);//[{'name':'Leo','age':26}{'name':'Hughes','age':25}]
+```
+
 >***concat***
 >数组合并去重 [字符串数字和数字视为不同处理]
 
