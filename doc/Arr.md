@@ -56,6 +56,7 @@ _.unique(a); //[null,1,undefined,2,'',3,'1','3' ]
 
 >***colUnique***
 >数组去除重复对象
+
 ```js
 let a = [
     {'name':'Leo','age':26},
@@ -63,7 +64,8 @@ let a = [
     {'name':'Hughes','age':25}
 ];
 
-_.colUnique(a);//[{'name':'Leo','age':26}{'name':'Hughes','age':25}]
+_.colUnique(a);
+//[{'name':'Leo','age':26}{'name':'Hughes','age':25}]
 ```
 
 >***concat***
