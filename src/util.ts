@@ -153,7 +153,7 @@ export default class Util {
         result = '';
 
     for (let i = 0; i < len; i++) {
-      result += charArr[parseInt(numArr[i])];
+      result += charArr[parseInt(numArr[i], 10)];
     }
 
     return result;

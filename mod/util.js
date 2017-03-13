@@ -67,7 +67,7 @@ var Util = (function () {
     Util.prototype.exNum = function (charNum) {
         var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'], num = charNum.toString(), numArr = num.split(''), len = numArr.length, result = '';
         for (var i = 0; i < len; i++) {
-            result += charArr[parseInt(numArr[i])];
+            result += charArr[parseInt(numArr[i], 10)];
         }
         return result;
     };
