@@ -46,15 +46,9 @@ export default class Arr {
    * 
    */
   getMin(arr: any[]): any {
-    let nArr   = this.compact(arr),
-        val    = parseInt(nArr[0]),
-        length = nArr.length;
+    let nArr = this.compact(arr);
 
-    for (let v of nArr) {
-      if (parseInt(v) < val) val = v;
-    }
-
-    return val;
+    return Math.min.apply(nArr, nArr);
   }
 
   /**
@@ -62,15 +56,9 @@ export default class Arr {
    * 
    */
   getMax(arr: any[]): any {
-    let nArr   = this.compact(arr),
-        val    = parseInt(nArr[0]),
-        length = nArr.length;
+    let nArr = this.compact(arr);
 
-    for (let v of nArr) {
-      if (parseInt(v) > val) val = v;
-    }
-
-    return val;
+    return Math.max.apply(nArr, nArr);
   }
 
   /**

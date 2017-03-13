@@ -548,24 +548,12 @@
 			return outArr;
 		};
 		Arr.prototype.getMin = function (arr) {
-			var nArr = this.compact(arr),
-			    val = parseInt(nArr[0]),
-			    length = nArr.length;
-			for (var _i = 0, nArr_1 = nArr; _i < nArr_1.length; _i++) {
-				var v = nArr_1[_i];
-				if (parseInt(v) < val) val = v;
-			}
-			return val;
+			var nArr = this.compact(arr);
+			return Math.min.apply(nArr, nArr);
 		};
 		Arr.prototype.getMax = function (arr) {
-			var nArr = this.compact(arr),
-			    val = parseInt(nArr[0]),
-			    length = nArr.length;
-			for (var _i = 0, nArr_2 = nArr; _i < nArr_2.length; _i++) {
-				var v = nArr_2[_i];
-				if (parseInt(v) > val) val = v;
-			}
-			return val;
+			var nArr = this.compact(arr);
+			return Math.max.apply(nArr, nArr);
 		};
 		Arr.prototype.unique = function (arr) {
 			var uq = {},
