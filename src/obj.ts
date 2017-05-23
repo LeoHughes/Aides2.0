@@ -1,6 +1,6 @@
-import Reg from './reg';
+import Reg from './reg'
 
-const _ = new Reg();
+const _ = new Reg()
 
 /**
  * Object
@@ -12,15 +12,15 @@ export default class Obj {
    * 
    */
   has(obj: any, key: string): boolean {
-    let flag = false;
+    let flag = false
 
     if (_.isObject(obj)) {
       for (let v in obj) {
-        if (v === key) flag = true;
+        if (v === key) flag = true
       }
     }
 
-    return flag;
+    return flag
   }
 
   /**
@@ -28,15 +28,15 @@ export default class Obj {
    * 
    */
   keys(obj: any): any[] {
-    let oArr = [];
+    let oArr = []
 
     if (_.isObject(obj)) {
       for (let p in obj) {
-        if (this.has(obj, p)) oArr.push(p);
+        if (this.has(obj, p)) oArr.push(p)
       }
     }
 
-    return oArr;
+    return oArr
   }
 
   /**
@@ -44,11 +44,11 @@ export default class Obj {
    * 
    */
   values(obj: any): any[] {
-    let oArr = [];
+    let oArr = []
 
     if (_.isObject(obj)) {
       for (let v in obj) {
-        if (this.has(obj, v)) oArr.push(obj[v]);
+        if (this.has(obj, v)) oArr.push(obj[v])
       }
     }
 
@@ -60,13 +60,13 @@ export default class Obj {
    * 
    */
   methods(obj: any): any[] {
-    let oArr = [];
+    let oArr = []
 
     for (let v in obj) {
-      if (_.isFunction(obj[v])) oArr.push(v);
+      if (_.isFunction(obj[v])) oArr.push(v)
     }
 
-    return oArr;
+    return oArr
   }
 
   /**
@@ -74,15 +74,15 @@ export default class Obj {
    * 
    */
   objCompact(obj: any): any {
-    let newObj = {};
+    let newObj = {}
 
     for (let v in obj) {
       if (obj[v]) {
-        newObj[v] = obj[v];
+        newObj[v] = obj[v]
       }
     }
 
-    return newObj;
+    return newObj
   }
 
   /**
@@ -90,11 +90,11 @@ export default class Obj {
    * 
    */
   pickKeys(obj: any, keys: string[]): any {
-    let newObj = {};
+    let newObj = {}
 
     for (let v in keys) {
       if (obj.hasOwnProperty(keys[v])) {
-        newObj[keys[v]] = obj[keys[v]];
+        newObj[keys[v]] = obj[keys[v]]
       }
     }
 
@@ -110,13 +110,13 @@ export default class Obj {
 
       for (let v in objs[i]) {
         if(!this.has(tarObj,objs[i][v])){
-          tarObj[v] = objs[i][v];
+          tarObj[v] = objs[i][v]
         }
       }
       
     }
     
-    return tarObj;
+    return tarObj
   }
 
   constructor() {

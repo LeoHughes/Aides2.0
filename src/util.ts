@@ -1,8 +1,8 @@
-import  Reg  from './reg';
-import  Obj  from './obj';
+import  Reg  from './reg'
+import  Obj  from './obj'
 
-const _ = new Reg(),
-      o = new Obj();
+const _ = new Reg()
+const o = new Obj()
 
 /**
  * util
@@ -14,18 +14,18 @@ export default class Util {
    * 获得字符串、数组的长度,获得对象的属性数量,数字小数点前的位数
    */
   size(el: any): number {
-    let length;
+    let length
 
     if (_.isString(el) || _.isArray(el)) {
-      length = el.length;
+      length = el.length
     } else if (_.isObject(el)) {
-      length = o.keys(el).length;
+      length = o.keys(el).length
     } else if (_.isNumber(el)) {
-      el = el.toString().split('.')[0];
-      length = el.length;
+      el = el.toString().split('.')[0]
+      length = el.length
     }
 
-    return length;
+    return length
   }
 
 
@@ -37,9 +37,9 @@ export default class Util {
    *
    */
   trunc(text: string, len: number, separator: string): string {
-    let codes = _.isNull(separator) ? '...' : separator.toString();
+    let codes = _.isNull(separator) ? '...' : separator.toString()
 
-    return (text.substring(0, len) + codes);
+    return (text.substring(0, len) + codes)
   }
 
   /**
@@ -49,14 +49,14 @@ export default class Util {
    *
    */
   repeat(text: string, length: number): string {
-    let outStr = '';
+    let outStr = ''
 
     if (_.isString(text)) {
       for (let i = 0; i < length; i++) {
-        outStr += text;
+        outStr += text
       }
     }
-    return outStr;
+    return outStr
   }
 
   /**
@@ -66,18 +66,18 @@ export default class Util {
    *
    */
   getDate(sepr = '/'): string {
-    const dateArr = this.getDateArr();
+    const dateArr = this.getDateArr()
 
-    return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`;
+    return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`
   }
 
   /**
    * 获取当前日期中文格式(年月日)
    */
   getCNDate(): string {
-    const dateArr = this.getDateArr();
+    const dateArr = this.getDateArr()
 
-    return `${dateArr[0]}年${dateArr[1]}月${dateArr[2]}日`;
+    return `${dateArr[0]}年${dateArr[1]}月${dateArr[2]}日`
   }
 
   /**
@@ -85,9 +85,9 @@ export default class Util {
    *
    */
   getTimes(sepr = ':'): string {
-    const dateArr = this.getTimesArr();
+    const dateArr = this.getTimesArr()
 
-    return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`;
+    return `${dateArr[0]}${sepr}${dateArr[1]}${sepr}${dateArr[2]}`
 
   }
 
@@ -96,9 +96,9 @@ export default class Util {
    *
    */
   getCNTimes(): string {
-    const dateArr = this.getTimesArr();
+    const dateArr = this.getTimesArr()
 
-    return `${dateArr[0]}时${dateArr[1]}分${dateArr[2]}秒`;
+    return `${dateArr[0]}时${dateArr[1]}分${dateArr[2]}秒`
 
   }
 
@@ -107,19 +107,19 @@ export default class Util {
    *
    */
   getDateArr(): Array<string> {
-    let time = new Date(),
-        year = time.getFullYear(),
-        m = time.getMonth() + 1,
-        month = m < 10 ? ('0' + m) : m,
-        d = time.getDate(),
-        day = d < 10 ? ('0' + d) : d,
-        outArr = [];
+    let time = new Date()
+    let year = time.getFullYear()
+    let m = time.getMonth() + 1
+    let month = m < 10 ? ('0' + m) : m
+    let d = time.getDate()
+    let day = d < 10 ? ('0' + d) : d
+    let outArr = []
 
-    outArr.push(year.toString());
-    outArr.push(month.toString());
-    outArr.push(day.toString());
+    outArr.push(year.toString())
+    outArr.push(month.toString())
+    outArr.push(day.toString())
 
-    return outArr;
+    return outArr
   }
 
   /**
@@ -127,43 +127,43 @@ export default class Util {
    *
    */
   getTimesArr(): Array<string> {
-    let time = new Date(),
-        hours = time.getHours(),
-        m = time.getMinutes(),
-        minutes = m < 10 ? ('0' + m) : m,
-        s = time.getSeconds(),
-        seconds = s < 10 ? ('0' + s) : s,
-        outArr = [];
+    let time = new Date()
+    let hours = time.getHours()
+    let m = time.getMinutes()
+    let minutes = m < 10 ? ('0' + m) : m
+    let s = time.getSeconds()
+    let seconds = s < 10 ? ('0' + s) : s
+    let outArr = []
 
-    outArr.push(hours.toString());
-    outArr.push(minutes.toString());
-    outArr.push(seconds.toString());
+    outArr.push(hours.toString())
+    outArr.push(minutes.toString())
+    outArr.push(seconds.toString())
 
-    return outArr;
+    return outArr
   }
 
   /**
    * 将阿拉伯数字转为汉字数字
    */
   exNum(charNum: number | string): string {
-    let charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
-        num = charNum.toString(),
-        numArr = num.split(''),
-        len = numArr.length,
-        result = '';
+    let charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
+    let num = charNum.toString()
+    let numArr = num.split('')
+    let len = numArr.length
+    let result = ''
 
     for (let i = 0; i < len; i++) {
-      result += charArr[parseInt(numArr[i], 10)];
+      result += charArr[parseInt(numArr[i], 10)]
     }
 
-    return result;
+    return result
   }
 
   /**
    * 生成范围随机数
    */
   randomNum(start: number, end: number): number {
-    return Math.floor(Math.random() * (end - start) + start);
+    return Math.floor(Math.random() * (end - start) + start)
   }
 
   /**
@@ -172,8 +172,8 @@ export default class Util {
    * num:验证码位数
    */
   getCode(num = 4): string {
-    let random = Math.random();
-    return random.toString(16).substr(3, num);
+    let random = Math.random()
+    return random.toString(16).substr(3, num)
   }
 
   /**
@@ -181,9 +181,9 @@ export default class Util {
    *
    */
   getWeek(date?: string): string {
-    date = date || (this.getDate('-'));
+    date = date || (this.getDate('-'))
 
-    return '星期' + this.exNum(new Date(date).getDay());
+    return '星期' + this.exNum(new Date(date).getDay())
   }
 
   /**
@@ -191,8 +191,8 @@ export default class Util {
    *
    */
   now(): string {
-    const tArr = this.getDateArr().concat(this.getTimesArr());
-    return tArr.join('');
+    const tArr = this.getDateArr().concat(this.getTimesArr())
+    return tArr.join('')
   }
 
   /**
@@ -200,27 +200,27 @@ export default class Util {
    * 
    */
   getUrlParam(): any {
-    const reg_url = window.location.search;
+    const reg_url = window.location.search
 
-    let reg_arr = [],
-        url_obj = {};
+    let reg_arr = []
+    let url_obj = {}
 
     if (reg_url) {
       if (reg_url.indexOf('&') !== -1) {
 
-        reg_arr = reg_url.substr(1).split('&');
+        reg_arr = reg_url.substr(1).split('&')
 
         for (let v of reg_arr) {
-          let key   = v.split('=')[0],
-              value = v.split('=')[1];
+          let key   = v.split('=')[0]
+          let value = v.split('=')[1]
 
-          url_obj[key] = value;
+          url_obj[key] = value
         }
 
-        return url_obj;
+        return url_obj
 
       } else {
-        return reg_url.substr(1);
+        return reg_url.substr(1)
       }
     }
 
@@ -242,17 +242,17 @@ export default class Util {
       if (endTime) {
 
         let t = setInterval(() => {
-          callback();
-        }, time);
+          callback()
+        }, time)
 
         setTimeout(() => {
-          clearInterval(t);
+          clearInterval(t)
           
-          if (endCallback) endCallback();
-        }, time + endTime);
+          if (endCallback) endCallback()
+        }, time + endTime)
 
       } else {
-        setInterval(callback, time);
+        setInterval(callback, time)
       }
     }
 

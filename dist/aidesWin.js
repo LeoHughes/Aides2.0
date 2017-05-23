@@ -68,8 +68,8 @@
 	var aides_1 = __webpack_require__(1);
 	var util_1 = __webpack_require__(3);
 	var store_1 = __webpack_require__(6);
-	var util = new util_1.default(),
-	    store = new store_1.default();
+	var util = new util_1.default();
+	var store = new store_1.default();
 	var AidesWin = function (_super) {
 		__extends(AidesWin, _super);
 		function AidesWin() {
@@ -118,9 +118,9 @@
 	var util_1 = __webpack_require__(3);
 	var arr_1 = __webpack_require__(5);
 	var obj_1 = __webpack_require__(4);
-	var util = new util_1.default(),
-	    arr = new arr_1.default(),
-	    obj = new obj_1.default();
+	var util = new util_1.default();
+	var arr = new arr_1.default();
+	var obj = new obj_1.default();
 	var Aides = function (_super) {
 		__extends(Aides, _super);
 		function Aides() {
@@ -290,8 +290,8 @@
 	Object.defineProperty(exports, "__esModule", { value: true });
 	var reg_1 = __webpack_require__(2);
 	var obj_1 = __webpack_require__(4);
-	var _ = new reg_1.default(),
-	    o = new obj_1.default();
+	var _ = new reg_1.default();
+	var o = new obj_1.default();
 	var Util = function () {
 		function Util() {}
 		Util.prototype.size = function (el) {
@@ -342,37 +342,37 @@
 			return dateArr[0] + "\u65F6" + dateArr[1] + "\u5206" + dateArr[2] + "\u79D2";
 		};
 		Util.prototype.getDateArr = function () {
-			var time = new Date(),
-			    year = time.getFullYear(),
-			    m = time.getMonth() + 1,
-			    month = m < 10 ? '0' + m : m,
-			    d = time.getDate(),
-			    day = d < 10 ? '0' + d : d,
-			    outArr = [];
+			var time = new Date();
+			var year = time.getFullYear();
+			var m = time.getMonth() + 1;
+			var month = m < 10 ? '0' + m : m;
+			var d = time.getDate();
+			var day = d < 10 ? '0' + d : d;
+			var outArr = [];
 			outArr.push(year.toString());
 			outArr.push(month.toString());
 			outArr.push(day.toString());
 			return outArr;
 		};
 		Util.prototype.getTimesArr = function () {
-			var time = new Date(),
-			    hours = time.getHours(),
-			    m = time.getMinutes(),
-			    minutes = m < 10 ? '0' + m : m,
-			    s = time.getSeconds(),
-			    seconds = s < 10 ? '0' + s : s,
-			    outArr = [];
+			var time = new Date();
+			var hours = time.getHours();
+			var m = time.getMinutes();
+			var minutes = m < 10 ? '0' + m : m;
+			var s = time.getSeconds();
+			var seconds = s < 10 ? '0' + s : s;
+			var outArr = [];
 			outArr.push(hours.toString());
 			outArr.push(minutes.toString());
 			outArr.push(seconds.toString());
 			return outArr;
 		};
 		Util.prototype.exNum = function (charNum) {
-			var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
-			    num = charNum.toString(),
-			    numArr = num.split(''),
-			    len = numArr.length,
-			    result = '';
+			var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+			var num = charNum.toString();
+			var numArr = num.split('');
+			var len = numArr.length;
+			var result = '';
 			for (var i = 0; i < len; i++) {
 				result += charArr[parseInt(numArr[i], 10)];
 			}
@@ -398,15 +398,15 @@
 		};
 		Util.prototype.getUrlParam = function () {
 			var reg_url = window.location.search;
-			var reg_arr = [],
-			    url_obj = {};
+			var reg_arr = [];
+			var url_obj = {};
 			if (reg_url) {
 				if (reg_url.indexOf('&') !== -1) {
 					reg_arr = reg_url.substr(1).split('&');
 					for (var _i = 0, reg_arr_1 = reg_arr; _i < reg_arr_1.length; _i++) {
 						var v = reg_arr_1[_i];
-						var key = v.split('=')[0],
-						    value = v.split('=')[1];
+						var key = v.split('=')[0];
+						var value = v.split('=')[1];
 						url_obj[key] = value;
 					}
 					return url_obj;
@@ -525,13 +525,13 @@
 	Object.defineProperty(exports, "__esModule", { value: true });
 	var reg_1 = __webpack_require__(2);
 	var obj_1 = __webpack_require__(4);
-	var _ = new reg_1.default(),
-	    o = new obj_1.default();
+	var _ = new reg_1.default();
+	var o = new obj_1.default();
 	var Arr = function () {
 		function Arr() {}
 		Arr.prototype.chunk = function (arr, size) {
-			var outArr = [],
-			    length = arr.length;
+			var outArr = [];
+			var length = arr.length;
 			for (var i = 0; i < length; i += size) {
 				var inArr = arr.slice(i, i + size);
 				outArr.push(inArr);
@@ -555,9 +555,9 @@
 			return Math.max.apply(Math, nArr);
 		};
 		Arr.prototype.unique = function (arr) {
-			var uq = {},
-			    outArr = [],
-			    prefix = '';
+			var uq = {};
+			var outArr = [];
+			var prefix = '';
 			for (var v in arr) {
 				if (_.isString(arr[v])) {
 					prefix = '_str';
@@ -629,8 +629,8 @@
 			return cookieVal;
 		};
 		Store.prototype.setCookie = function (name, value, time) {
-			var d = new Date(),
-			    expires;
+			var d = new Date();
+			var expires;
 			d.setTime(d.getTime() + time * 1000);
 			expires = "expires=" + d.toUTCString();
 			document.cookie = name + "=" + value + ";" + expires;
@@ -656,11 +656,11 @@
 			}
 		};
 		Store.prototype.getStoreObj = function () {
-			var len = storage.length,
-			    obj = {};
+			var len = storage.length;
+			var obj = {};
 			for (var i = 0; i < len; i++) {
-				var key = storage.key(i),
-				    val = this.getStoreItem(key);
+				var key = storage.key(i);
+				var val = this.getStoreItem(key);
 				obj[key] = val;
 			}
 			return obj;
@@ -677,5 +677,4 @@
 	exports.default = Store;
 
 	/***/
-}
-/******/]);
+}]);

@@ -1,7 +1,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var reg_1 = require("./reg");
 var obj_1 = require("./obj");
-var _ = new reg_1.default(), o = new obj_1.default();
+var _ = new reg_1.default();
+var o = new obj_1.default();
 var Util = (function () {
     function Util() {
     }
@@ -51,21 +52,37 @@ var Util = (function () {
         return dateArr[0] + "\u65F6" + dateArr[1] + "\u5206" + dateArr[2] + "\u79D2";
     };
     Util.prototype.getDateArr = function () {
-        var time = new Date(), year = time.getFullYear(), m = time.getMonth() + 1, month = m < 10 ? ('0' + m) : m, d = time.getDate(), day = d < 10 ? ('0' + d) : d, outArr = [];
+        var time = new Date();
+        var year = time.getFullYear();
+        var m = time.getMonth() + 1;
+        var month = m < 10 ? ('0' + m) : m;
+        var d = time.getDate();
+        var day = d < 10 ? ('0' + d) : d;
+        var outArr = [];
         outArr.push(year.toString());
         outArr.push(month.toString());
         outArr.push(day.toString());
         return outArr;
     };
     Util.prototype.getTimesArr = function () {
-        var time = new Date(), hours = time.getHours(), m = time.getMinutes(), minutes = m < 10 ? ('0' + m) : m, s = time.getSeconds(), seconds = s < 10 ? ('0' + s) : s, outArr = [];
+        var time = new Date();
+        var hours = time.getHours();
+        var m = time.getMinutes();
+        var minutes = m < 10 ? ('0' + m) : m;
+        var s = time.getSeconds();
+        var seconds = s < 10 ? ('0' + s) : s;
+        var outArr = [];
         outArr.push(hours.toString());
         outArr.push(minutes.toString());
         outArr.push(seconds.toString());
         return outArr;
     };
     Util.prototype.exNum = function (charNum) {
-        var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'], num = charNum.toString(), numArr = num.split(''), len = numArr.length, result = '';
+        var charArr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+        var num = charNum.toString();
+        var numArr = num.split('');
+        var len = numArr.length;
+        var result = '';
         for (var i = 0; i < len; i++) {
             result += charArr[parseInt(numArr[i], 10)];
         }
@@ -89,13 +106,15 @@ var Util = (function () {
     };
     Util.prototype.getUrlParam = function () {
         var reg_url = window.location.search;
-        var reg_arr = [], url_obj = {};
+        var reg_arr = [];
+        var url_obj = {};
         if (reg_url) {
             if (reg_url.indexOf('&') !== -1) {
                 reg_arr = reg_url.substr(1).split('&');
                 for (var _i = 0, reg_arr_1 = reg_arr; _i < reg_arr_1.length; _i++) {
                     var v = reg_arr_1[_i];
-                    var key = v.split('=')[0], value = v.split('=')[1];
+                    var key = v.split('=')[0];
+                    var value = v.split('=')[1];
                     url_obj[key] = value;
                 }
                 return url_obj;

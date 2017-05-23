@@ -13,7 +13,9 @@ var reg_1 = require("./reg");
 var util_1 = require("./util");
 var arr_1 = require("./arr");
 var obj_1 = require("./obj");
-var util = new util_1.default(), arr = new arr_1.default(), obj = new obj_1.default();
+var util = new util_1.default();
+var arr = new arr_1.default();
+var obj = new obj_1.default();
 var Aides = (function (_super) {
     __extends(Aides, _super);
     function Aides() {

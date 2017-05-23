@@ -1,12 +1,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var reg_1 = require("./reg");
 var obj_1 = require("./obj");
-var _ = new reg_1.default(), o = new obj_1.default();
+var _ = new reg_1.default();
+var o = new obj_1.default();
 var Arr = (function () {
     function Arr() {
     }
     Arr.prototype.chunk = function (arr, size) {
-        var outArr = [], length = arr.length;
+        var outArr = [];
+        var length = arr.length;
         for (var i = 0; i < length; i += size) {
             var inArr = arr.slice(i, i + size);
             outArr.push(inArr);
@@ -31,7 +33,9 @@ var Arr = (function () {
         return Math.max.apply(Math, nArr);
     };
     Arr.prototype.unique = function (arr) {
-        var uq = {}, outArr = [], prefix = '';
+        var uq = {};
+        var outArr = [];
+        var prefix = '';
         for (var v in arr) {
             if (_.isString(arr[v])) {
                 prefix = '_str';

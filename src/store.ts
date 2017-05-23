@@ -1,11 +1,11 @@
-import  Reg  from './reg';
+import  Reg  from './reg'
 
-const _ = new Reg();
+const _ = new Reg()
 
-let storage;
+let storage
 
 if ((typeof Storage) !== 'undefined') {
-    storage = window.localStorage;
+    storage = window.localStorage
 }
 
 /**
@@ -19,21 +19,21 @@ export default class Store {
    * 根据name获取cookie值，若无则返回空
    */
   getCookie(name: string): string {
-    const cname = `${name}=`;
+    const cname = `${name}=`
     
-    let cookieVal = '';
+    let cookieVal = ''
 
     if (document.cookie) {
-      const ca = document.cookie.split(';');
+      const ca = document.cookie.split(';')
 
       for (let key of ca) {
-        let c = _.trim(key);
+        let c = _.trim(key)
         if (c.indexOf(cname) === 0) {
-          cookieVal = c.substring(cname.length, c.length);
+          cookieVal = c.substring(cname.length, c.length)
         }
       }
     }
-    return cookieVal;
+    return cookieVal
   }
 
   /**
@@ -45,20 +45,20 @@ export default class Store {
    *
    **/
   setCookie(name: string, value: string, time: number): void {
-    let d = new Date(),
-        expires;
+    let d = new Date()
+    let expires
 
-    d.setTime(d.getTime() + (time * 1000));
-    expires = "expires=" + d.toUTCString();
+    d.setTime(d.getTime() + (time * 1000))
+    expires = "expires=" + d.toUTCString()
 
-    document.cookie = `${name}=${value};${expires}`;
+    document.cookie = `${name}=${value};${expires}`
   }
 
   /**
    * 根据name清除cookie
    */
   clearCookie(name: string): void {
-    this.setCookie(name, '', -1);
+    this.setCookie(name, '', -1)
   }
 
   /**
@@ -66,7 +66,7 @@ export default class Store {
    */
   getStoreItem(name: string): string {
     if (!_.isNull(storage)) {
-      return storage.getItem(name);
+      return storage.getItem(name)
     }
   }
 
@@ -75,7 +75,7 @@ export default class Store {
    */
   setStoreItem(name: string, val: string): void {
     if (!_.isNull(storage)) {
-      return storage.setItem(name, val);
+      return storage.setItem(name, val)
     }
   }
 
@@ -85,7 +85,7 @@ export default class Store {
   setStoreObj(obj: any): void {
     if (_.isObject(obj)) {
       for (let v in obj) {
-        this.setStoreItem(v, obj[v]);
+        this.setStoreItem(v, obj[v])
       }
     }
   }
@@ -94,32 +94,32 @@ export default class Store {
    * 将localStorage以Object返回
    */
   getStoreObj(): any {
-    let len = storage.length,
-        obj = {};
+    let len = storage.length
+    let obj = {}
 
     for (let i = 0; i < len; i++) {
-      let key = storage.key(i),
-          val = this.getStoreItem(key);
+      let key = storage.key(i)
+      let val = this.getStoreItem(key)
 
-      obj[key] = val;
+      obj[key] = val
     }
 
-    return obj;
+    return obj
   }
 
   /**
    * 根据name删除localStorage存储的值,成功则返回true
    */
   removeStoreItem(name: string): boolean {
-    storage.removeItem(name);
-    return this.getStoreItem(name) === null ? true : false;
+    storage.removeItem(name)
+    return this.getStoreItem(name) === null ? true : false
   }
 
   /**
    * 清空localStorage的所有数据
    */
   clearStore(): void {
-    storage.clear();
+    storage.clear()
   }
 
 

@@ -1,8 +1,8 @@
-import Reg from './reg';
-import Obj from './obj';
+import Reg from './reg'
+import Obj from './obj'
 
-const _ = new Reg(),
-      o = new Obj();
+const _ = new Reg()
+const o = new Obj()
 
 /**
  * Array
@@ -16,12 +16,12 @@ export default class Arr {
    * 
    */
   chunk(arr: any[], size: number): any[] {
-    let outArr = [],
-        length = arr.length;
+    let outArr = []
+    let length = arr.length
 
     for (let i = 0; i < length; i += size) {
-      let inArr = arr.slice(i, i + size);
-      outArr.push(inArr);
+      let inArr = arr.slice(i, i + size)
+      outArr.push(inArr)
     }
 
     return outArr;
@@ -32,10 +32,10 @@ export default class Arr {
    * 
    */
   compact(arr: any[]): any[] {
-    let outArr = [];
+    let outArr = []
 
     for (let v of arr) {
-      if (v) outArr.push(v);
+      if (v) outArr.push(v)
     }
 
     return outArr;
@@ -46,9 +46,9 @@ export default class Arr {
    * 
    */
   getMin(arr: any[]): any {
-    let nArr = this.compact(arr);
+    let nArr = this.compact(arr)
 
-    return Math.min(...nArr);
+    return Math.min(...nArr)
   }
 
   /**
@@ -56,9 +56,9 @@ export default class Arr {
    * 
    */
   getMax(arr: any[]): any {
-    let nArr = this.compact(arr);
+    let nArr = this.compact(arr)
 
-    return Math.max(...nArr);
+    return Math.max(...nArr)
   }
 
   /**
@@ -66,26 +66,26 @@ export default class Arr {
    * 
    */
   unique(arr: any[]): any[] {
-    let uq     = {},
-        outArr = [],
-        prefix = '';
+    let uq     = {}
+    let outArr = []
+    let prefix = ''
 
     for (let v in arr) {
 
       if (_.isString(arr[v])) {
-        prefix = '_str';
+        prefix = '_str'
       } else {
-        prefix = '';
+        prefix = ''
       }
 
       if (!uq[arr[v] + prefix]) {
-        uq[arr[v] + prefix] = true;
-        outArr.push(arr[v]);
+        uq[arr[v] + prefix] = true
+        outArr.push(arr[v])
       }
 
     }
 
-    return outArr;
+    return outArr
   }
 
   /**
@@ -93,15 +93,15 @@ export default class Arr {
    * 
    */
   colUnique(arr: any[]): any[] {
-    let output = {};
+    let output = {}
 
     arr.map((v)=>{
-      output[JSON.stringify(v)] = 'z';
+      output[JSON.stringify(v)] = 'z'
     })
 
     return o.keys(output).map((v)=>{
-      return JSON.parse(v);
-    });
+      return JSON.parse(v)
+    })
 
   }
 
@@ -110,7 +110,7 @@ export default class Arr {
    * 
    */
   concat(...arr: any[]): any[] {
-    return this.unique([].concat(...arr));
+    return this.unique([].concat(...arr))
   }
 
   /**
@@ -121,15 +121,15 @@ export default class Arr {
    * 
    */
   toObj(list: any[], values: any[]): any {
-    let nObj = {};
+    let nObj = {}
 
     for (let v in list) {
-      if (!values[v]) nObj[list[v]] = null;
+      if (!values[v]) nObj[list[v]] = null
       
-      nObj[list[v]] = values[v];
+      nObj[list[v]] = values[v]
     }
 
-    return nObj;
+    return nObj
   }
 
 

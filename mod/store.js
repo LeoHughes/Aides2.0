@@ -24,7 +24,8 @@ var Store = (function () {
         return cookieVal;
     };
     Store.prototype.setCookie = function (name, value, time) {
-        var d = new Date(), expires;
+        var d = new Date();
+        var expires;
         d.setTime(d.getTime() + (time * 1000));
         expires = "expires=" + d.toUTCString();
         document.cookie = name + "=" + value + ";" + expires;
@@ -50,9 +51,11 @@ var Store = (function () {
         }
     };
     Store.prototype.getStoreObj = function () {
-        var len = storage.length, obj = {};
+        var len = storage.length;
+        var obj = {};
         for (var i = 0; i < len; i++) {
-            var key = storage.key(i), val = this.getStoreItem(key);
+            var key = storage.key(i);
+            var val = this.getStoreItem(key);
             obj[key] = val;
         }
         return obj;
